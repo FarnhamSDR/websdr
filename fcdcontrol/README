@@ -1,0 +1,34 @@
+FunCube Dongle command line interface
+-------------------------------------
+
+David Pello EA1IDZ
+Contributions by:
+Pieter-Tjerk, PA3FWM
+
+
+This is a fast hack for a command line interface for funcube dongle, 
+so I can use it in scripts and the like.
+I decided to publish it because I think it can be useful to some other people.
+
+This copy has been further hacked by Alexandru Csete OZ9AEC to make it work with
+the Funcube Dongle Pro+.
+
+FCD HID code is from QTHID so thank them:
+Howard Long G6LVB,
+Alexandru Csete OZ9AEC, 
+Mario Lorenz DL5MLO
+
+Thanks to Pieter-Tjerk, PA3FWM for his contributions.
+
+This is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
