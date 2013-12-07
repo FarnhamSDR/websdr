@@ -40,7 +40,13 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-33341441-2', 'suws.org.uk');
     ga('send', 'pageview');
-    setInterval(function() { ga('send', 'event', 'hb', 'keepalive'); },60*1000);
+    setInterval(function() {
+        if(band==0) {
+            ga('send', 'event', 'onband', '23cm');
+        } else {
+            ga('send', 'event', 'onband', '70cm');
+        }
+    },60*1000);
 </script>
 </head>
 <body onload=bodyonload()>
