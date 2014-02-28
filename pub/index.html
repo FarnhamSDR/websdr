@@ -42,11 +42,13 @@
     ga('send', 'pageview');
     setInterval(function() {
         if(band==0) {
-            ga('send', 'event', 'onband', '23cm');
+            ga('send', 'event', 'listenband', '3cm');
         } else if(band==1) {
-            ga('send', 'event', 'onband', '70cm');
-        } else {
-            ga('send', 'event', 'onband', '2m');
+            ga('send', 'event', 'listenband', '23cm');
+        } else if(band==2) {
+            ga('send', 'event', 'listenband', '70cm');
+        } else if(band==3) {
+            ga('send', 'event', 'listenband', '2m');
         }
     },60*1000);
 </script>
