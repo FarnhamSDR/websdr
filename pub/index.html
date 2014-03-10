@@ -32,8 +32,10 @@
         background-size: 100% 2em;
         line-height: 1em;
     }
-    #map {
-        height: 400px;
+    .map {
+        height: 300px;
+	width: 48%;
+	float: left;
     }
     .box {
         position: absolute; 
@@ -131,10 +133,13 @@ Instructions on how to do this can be found <a href="http://www.java.com/en/down
 <script>
 var beacons=[];
 
-var map = L.map('map', {
+var map = L.map('map-beacons', {
     center: [51.83, -1],
-    zoom: 6,
-    worldCopyJump: true
+    zoom: 6
+});
+var map_repeaters = L.map('map-repeaters', {
+    center: [51.83, -1],
+    zoom: 6
 });
 
 var osm = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -142,7 +147,13 @@ var osm = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     minZoom: 4,
     maxZoom: 19
 });
+var osm_b = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    minZoom: 4,
+    maxZoom: 19
+});
 map.addLayer(osm);
+map_repeaters.addLayer(osm_b);
 
 loadBeacons();
 
