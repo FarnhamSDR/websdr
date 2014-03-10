@@ -32,7 +32,39 @@
         background-size: 100% 2em;
         line-height: 1em;
     }
+    #map {
+        height: 400px;
+    }
+    .box {
+        position: absolute; 
+        background-color: white; 
+        border: 1px solid #0070a3; 
+        background-attachment:initial;
+        background-clip:initial;
+        background-color:rgb(255, 255, 255);
+        background-color:rgba(255, 255, 255, 0.85);
+        background-image:initial;
+        background-origin:initial;
+        background-position:initial;
+        background-repeat:initial;
+    }
+    #box-observer {
+        z-index: 99;
+        position: absolute;
+        top: 10px;
+        left: 45px;
+        width: 200px;
+        max-width: 100%;
+        max-height: 75%;
+        overflow-y: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: Helvetica,"Lucida Grande",Verdana,Arial;
+        font-size: 12px;
+        line-height: 1.5em;
+    }
 </style>
+<link href="static/leaflet/leaflet.css" rel="stylesheet">
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -91,6 +123,42 @@ The software used for this WebSDR is kindly provided by the <a href="http://www.
 Instructions on how to do this can be found <a href="http://www.java.com/en/download/faq/exception_sitelist.xml">on the Java Website here</a>. You will then need to refresh this page, possibly multiple times until it works.</b>
 <hr>
 <!--#include file="websdr-controls.html"-->
+<script src="static/jquery-1.11.0.min.js"></script>
+<script src="static/leaflet/leaflet.js"></script>
+<script src="static/moment.min.js"></script>
+<script>
+var beacons=[];
+
+var map = L.map('map', {
+    center: [51.83, -1],
+    zoom: 6,
+    worldCopyJump: true
+});
+
+var osm = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    minZoom: 4,
+    maxZoom: 19
+});
+map.addLayer(osm);
+
+loadBeacons();
+
+function loadBeacons() {
+    $.ajax({
+        url: "beacons.json",
+        type: "GET",
+        dataType: 'json',
+        success: function( data ) {
+            for(var beacon in data) {
+                beacons[beacon] = L.marker([data[beacon].lat,data[beacon].lon], {
+                    title: beacon,
+                }).addTo(map).bindPopup('<h3>'+beacon+'</h3><a href="javascript:setfreqb('+data[beacon].sdrfreq*1000+')">'+data[beacon].realfreq+' MHz</a>');
+            }
+        }
+    });
+}
+</script>
 </body>
 </html>
 
