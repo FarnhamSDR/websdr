@@ -132,8 +132,9 @@ Instructions on how to do this can be found <a href="http://www.java.com/en/down
 <script src="static/moment.min.js"></script>
 <script>
 var beacons=[];
+var repeaters=[];
 
-var map = L.map('map-beacons', {
+var map_beacons = L.map('map-beacons', {
     center: [51.83, -1],
     zoom: 6
 });
@@ -142,20 +143,21 @@ var map_repeaters = L.map('map-repeaters', {
     zoom: 6
 });
 
-var osm = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var osm_beacons = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 4,
     maxZoom: 19
 });
-var osm_b = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var osm_repeaters = new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 4,
     maxZoom: 19
 });
-map.addLayer(osm);
-map_repeaters.addLayer(osm_b);
+map_beacons.addLayer(osm_beacons);
+map_repeaters.addLayer(osm_repeaters);
 
 loadBeacons();
+loadRepeaters();
 
 function loadBeacons() {
     $.ajax({
@@ -166,7 +168,22 @@ function loadBeacons() {
             for(var beacon in data) {
                 beacons[beacon] = L.marker([data[beacon].lat,data[beacon].lon], {
                     title: beacon,
-                }).addTo(map).bindPopup('<h3>'+beacon+'</h3><a href="javascript:setfreqb('+data[beacon].sdrfreq*1000+')">'+data[beacon].realfreq+' MHz</a>');
+                }).addTo(map_beacons).bindPopup('<h3>'+beacon+'</h3><a href="javascript:setfreqb('+data[beacon].sdrfreq*1000+')">'+data[beacon].realfreq+' MHz</a>');
+            }
+        }
+    });
+}
+
+function loadRepeaters() {
+    $.ajax({
+        url: "repeaters.json",
+        type: "GET",
+        dataType: 'json',
+        success: function( data ) {
+            for(var repeater in data) {
+                repeaters[repeater] = L.marker([data[repeater].lat,data[repeater].lon], {
+                    title: repeater,
+                }).addTo(map_repeaters).bindPopup('<h3>'+repeater+'</h3>O/P: <a href="javascript:setfreqb('+data[repeater].sdrfreq*1000+')">'+data[repeater].realfreq+' MHz</a>');
             }
         }
     });
