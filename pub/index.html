@@ -168,7 +168,7 @@ function loadBeacons() {
             for(var beacon in data) {
                 beacons[beacon] = L.marker([data[beacon].lat,data[beacon].lon], {
                     title: beacon,
-                }).addTo(map_beacons).bindPopup('<h3>'+beacon+'</h3><a href="javascript:setfreqb('+data[beacon].sdrfreq*1000+')">'+data[beacon].realfreq+' MHz</a>');
+                }).addTo(map_beacons).bindPopup('<h3>'+beacon+'</h3><a href="javascript:tuneSDR('+data[beacon].mode+','+data[beacon].sdrfreq*1000+')">'+data[beacon].realfreq+' MHz</a>');
             }
         }
     });
@@ -183,10 +183,25 @@ function loadRepeaters() {
             for(var repeater in data) {
                 repeaters[repeater] = L.marker([data[repeater].lat,data[repeater].lon], {
                     title: repeater,
-                }).addTo(map_repeaters).bindPopup('<h3>'+repeater+'</h3>O/P: <a href="javascript:setfreqb('+data[repeater].sdrfreq*1000+')">'+data[repeater].realfreq+' MHz</a>');
+                }).addTo(map_repeaters).bindPopup('<h3>'+repeater+'</h3>O/P: <a href="javascript:tuneSDR('+data[repeater].mode+','+data[repeater].sdrfreq*1000+')">'+data[repeater].realfreq+' MHz</a>');
             }
         }
     });
+}
+
+function tuneSDR(modeId, freq) {
+    setfreqb(freq);
+    switch(modeId) {
+        case 1: // USB
+            setmf('usb', 0.3, 2.7);
+            break;
+        case 2: // LSB
+            setmf('lsb', -2.7, -0.3);
+            break;
+        case 3: // Narrow FM
+            setmf('fm, -6.5, 6.5);
+            break;
+    }
 }
 </script>
 </body>
