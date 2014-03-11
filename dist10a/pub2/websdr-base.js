@@ -326,7 +326,7 @@ function setfreqb(f)
       if (f>c-w && f<c+w) {
          e.vfo=f;
          setband(i);
-         document.freqform.frequency.value=str;
+         document.freqform.frequency.value=f;
          return;
       } 
    }
