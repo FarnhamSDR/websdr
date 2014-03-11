@@ -1,3 +1,8 @@
 {"GB3SEE":{"band":0,"mode":1,"realfreq":10368.850,"sdrfreq":618.850,"lat":51.2556,"lon":-0.2132},
 "GB3KBQ":{"band":0,"mode":1,"realfreq":10368.870,"sdrfreq":618.870,"lat":50.9630,"lon":-3.0830},
-"GB3CAM":{"band":0,"mode":1,"realfreq":10368.755,"sdrfreq":618.755,"lat":52.3493,"lon":-0.1229}}
+"GB3CAM":{"band":0,"mode":1,"realfreq":10368.755,"sdrfreq":618.755,"lat":52.3493,"lon":-0.1229},
+"GB3SCX":{"band":0,"mode":1,"realfreq":10368.905,"sdrfreq":618.905,"lat":50.8542,"lon":-2.2917},
+"GB3CCX":{"band":0,"mode":1,"realfreq":10368.940,"sdrfreq":618.940,"lat":51.9375,"lon":-2.0417},
+"GB3PKT":{"band":0,"mode":1,"realfreq":10368.945,"sdrfreq":618.945,"lat":51.8125,"lon":1.0417},
+"GB3LEX":{"band":0,"mode":1,"realfreq":10368.955,"sdrfreq":618.955,"lat":52.6875,"lon":-1.2917},
+"GB3XGH":{"band":0,"mode":1,"realfreq":10368.810,"sdrfreq":618.810,"lat":53.6042,"lon":-2.1250}}
