@@ -49,6 +49,7 @@
         background-origin:initial;
         background-position:initial;
         background-repeat:initial;
+	display: none;
     }
     #box-observer {
         z-index: 99;
@@ -158,6 +159,8 @@ map_repeaters.addLayer(osm_repeaters);
 
 loadBeacons();
 loadRepeaters();
+
+$(".box").show();
 
 function loadBeacons() {
     $.ajax({
