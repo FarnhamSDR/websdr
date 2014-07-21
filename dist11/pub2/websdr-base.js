@@ -864,6 +864,7 @@ function douu()
    }
    usersobj.innerHTML=s;
    numusersobj.innerHTML=total;
+   numusersobj2.innerHTML=total;
 }
 
 function setcompactview(c)
@@ -1273,6 +1274,7 @@ function bodyonload()
 
    statsobj = document.getElementById('stats');
    numusersobj = document.getElementById('numusers');
+   numusersobj2 = document.getElementById('numusers2');
    usersobj = document.getElementById('users');
 
    setview(view);
