@@ -1,8 +1,0 @@
-FunCube Dongle command line interface
-
-Installing:
-
-	Just run make, sudo make install, that's all, you need 
-	libusb-1.0 library and development headers for building.
-
-
