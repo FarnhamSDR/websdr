@@ -9,36 +9,27 @@ Documentation URL: http://www.suws.org.uk/WebSDR
 
 ## WebSDR Config Files
 
-### cfg/websdr.cfg
+### WebSDR Configuration File
 
-WebSDR Configuration File
+* cfg/websdr.cfg
 
-### cfg/stationinfo.txt
+### Waterfall Marker Flags
 
-Waterfall Marker Flags
+* cfg/stationinfo.txt
 
-### pub/index.html
+### WebSDR Main Web Page
 
-WebSDR Main Web Page
+* pub/index.html
 
 ## Upstart Configs
 
 * websdr.conf
 * rtltcp_144.conf
 * rtltcp_432.conf
+* rtltcp_435.conf
 * rtltcp_437.conf
 * rtltcp_1296.conf
 * rtltcp_10ghz.conf
-
-## Funcube Dongle Stuff
-
-#### fcdctl / fcdppctl
-
-Funcube Dongle Control Binaries
-
-#### funcube-dongle.rules
-
-udev rules for Funcube usb control
 
 ## License
 
