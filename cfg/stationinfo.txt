@@ -59,7 +59,8 @@
 437445usb LO-74
 437465usb CO-58
 437485fm CO-66
-437505usb MO-76
+437505usb MO-76 / SwissCube-1
+437525usb Sprout
 437550usb LO-78
 144050usb CW Calling
 144200usb MS Calling
