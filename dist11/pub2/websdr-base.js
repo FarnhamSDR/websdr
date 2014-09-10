@@ -406,7 +406,7 @@ function set_mode(m)      // ...with appropriate filter
       case "LSB": setmf("lsb", -2.7, -0.3); break;
       case "AM":  setmf("am", -4,  4); break;
       case "CW":  setmf("cw", -0.95,  -0.55); break;
-      case "FM":  setmf("fm", -8,  8); break;
+      case "FM":  setmf("fm", -5   ,  5); break;
    }
 }
 
@@ -1611,7 +1611,7 @@ function keydown(e)
       case 39:                                                         // right arrow
       case 75: freqstep(st);                 return cancelEvent(e);    // K
       case 65: setmf ('am',  -4  ,  4  );    return cancelEvent(e);    // A
-      case 70: setmf ('fm',  -8  ,  8  );    return cancelEvent(e);    // F
+      case 70: setmf ('fm',  -5  ,  5  );    return cancelEvent(e);    // F
       case 67: setmf ('cw', -0.95, -0.55);   return cancelEvent(e);    // C
       case 76: setmf('lsb', -2.7, -0.3);     return cancelEvent(e);    // L
       case 85: setmf('usb',  0.3,  2.7);     return cancelEvent(e);    // U
