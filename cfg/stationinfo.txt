@@ -33,7 +33,7 @@
 433525fm U282 Simplex
 433550fm U284 Simplex
 433575fm U286 Simplex
-433700fm Licence Free Short Range Radio Devices
+433700fm >Licence Free Short Range Devices>
 434400usb LEX
 434420usb KALEL
 434435usb CLARK
