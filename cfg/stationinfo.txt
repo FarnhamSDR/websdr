@@ -101,6 +101,7 @@
 437525usb Sprout
 437550usb LO-78
 437600usb AENEAS
+437767usb PolyITAN
 144050usb CW Calling
 144200usb MS Calling
 144300usb SSB Calling
