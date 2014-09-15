@@ -188,8 +188,8 @@
 145880usb QB50p2
 145915usb FUNCUBE2
 145935usb FUNCUBE1
-145950usb AO-7 <Transponder>
+145950usb AO-7 Transponder
 145970usb AO-7
-145975usb A0-73 <Transponder>
+145975usb A0-73 Transponder
 145980usb DUCHIFAT&TISat1
 
