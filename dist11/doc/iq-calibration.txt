@@ -1,0 +1,57 @@
+Correcting the I/Q balance in the WebSDR          PA3FWM, 2010-03-15
+====================================================================
+(updated 2011-01-02)
+
+Analogue SDRs typically do not have perfect I/Q balance: the two
+channels (called I and Q, or left and right soundcard input) may not
+have exactly the same gain or phase shift.
+This results in mirror images of signals.
+They can be suppressed to some extent in software. Currently, this
+procedure is not automatic in the WebSDR, but only semi-automatic.
+
+1) Connect a signal generator to the SDR's antenna input; set the
+   generator to produce an unmodulated carrier within the SDR's
+   passband, and set its level such that the signal is very strong
+   (so the mirror signals appear), but not so strong that the
+   system clips. (Clipping can be seen as the appearance of even
+   more signals in the waterfall display.)
+   Set the frequency close to the lower limit of the passband,
+   but still inside the band.
+
+2) Use a web browser or the 'wget' program to fetch the following
+   URL:
+     http://your.websdr.hostname.here/~~iqbalance0
+   where the last digit should be 0 for the first band, 1 for the
+   second band, etc.
+
+3) While the data is coming in, slowly increase the generator's
+   frequency, until you are just below the upper limit of the band.
+     
+4) Stop the fetching of the data.
+   Save the file in the websdr's /cfg directory under a suitable name.
+   (e.g., /home/websdr/cfg/iq-80m.txt ).
+   If needed, clean up the data (see below).
+
+5) In your websdr.cfg, add a line to the appropriate band section
+   like
+      balance filename.dat
+   where filename.dat obviously is the name under which you saved
+   the data.
+
+6) Restart the websdr, e.g. via sysop.html .
+
+That weird URL called ~~iqbalance produces at regular intervals one
+line of text which contains the I/Q correction data for the frequency
+which at that moment contains the strongest signal (which should be
+the signal from your signal generator).
+The first column represents the frequency, the next two columns are
+the correction coefficients, the next one the amplitude of the
+test signal, and the last one an auxiliary quantity that is no
+longer relevant. Only the first three columns are used.
+The file should be in order of increasing frequency; if needed,
+sort it (e.g. using 'sort -n').
+Watch out that you don't include any data points recorded when the
+signal generator was just outside the band: due to the non-perfect
+anti-alias filters in the soundcard, such signals can be received,
+but would give very wrong I/Q corrections.
+

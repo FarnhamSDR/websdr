@@ -1,0 +1,75 @@
+====================================================================
+WebSDR on the Raspberry Pi                        PA3FWM, 2013-02-02
+====================================================================
+
+Starting with the 'dist10' release, the WebSDR software comes with a
+version for the Raspberry Pi.
+However, this version (or rather, the Raspberry Pi) has some
+limitations as described below. In brief, there's no guarantee yet
+that it will work right.
+
+------------
+Installation
+------------
+Installing the software requires a Raspberry Pi running raspbian,
+but otherwise goes in exactly the same way as on a normal Linux PC,
+except that in the end you don't start ./websdr, but ./websdr-rpi .
+Also, be careful to choose the right input device; the default
+example, $hw:0,0,0 , won't work, because that refers to the Pi's
+built-in sound device, which has no input channel.
+
+If the websdr software complains about IPv6 not being supported,
+load the IPv6 kernel module by typing 'sudo modprobe ipv6'.
+You can make this happen at boot time by adding ipv6 to the list
+in /etc/modules .
+
+-----------
+SDR devices
+-----------
+Since the Pi does not have an audio input, you cannot just connect
+a softrock-style SDR. Instead, something will need to be connected
+via USB. You have two options:
+- get a USB soundcard with a stereo input and connect a softrock-style
+  SDR to it.
+- get an SDR which has a USB connection and presents itself to the
+  computer as a standard sound device (not all USB-connected SDRs do!).
+
+An RTL-SDR won't work, despite its USB connection: the Raspberry Pi 
+is not nearly fast enough to run a WebSDR with so much bandwidth.
+
+
+------------------
+Speed and problems
+------------------
+As noted above, the Raspberry Pi is not very fast.
+Using it with a FunCubeDongle Pro at 96 kHz samplerate, the CPU load
+was a bit over 50%.
+This was a non-overclocked R-Pi; there are now ways to slightly
+overclock it without voiding warranty, so 192 kHz samplerate _may_
+be possible. I'd be interested in hearing about experienes, both
+good and bad.
+
+CPU load is not the only concern though.
+It seems there are timing problems with the USB bus, which can cause
+audio samples to be dropped. Furthermore, it seems accessing the SD
+card blocks the USB bus, causing data to be dropped or delayed.
+Some possibilities to reduce these problems:
+- Reduce the USB speed by setting dwc_otg.speed=1 in /boot/cmdline.txt
+  and rebooting. From what I read, this on the one hand improves the
+  USB timing, but may also cause keyboard and mouse to no longer work
+  correctly.
+- Reduce the writing of log files by the WebSDR, by setting
+   logfileinterval 0
+  in websdr.cfg .
+- Use a USB stick for the websdr directory instead of the SD card.
+Again, I'd like to hear about your experience.
+
+-------------------------
+Other ARM based computers
+-------------------------
+There are a couple of other boards running Linux on an ARM processor.
+Some of those may be more powerful than the R-Pi, and/or have better
+USB performance. I do not have any of them to try, but would be
+interested in hearing whether the R-Pi version works on them, and if
+not, trying to make a version which does.
+

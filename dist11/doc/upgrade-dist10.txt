@@ -1,0 +1,122 @@
+========================================================================
+Upgrade instructions for the WebSDR server (20130312, pa3fwm@websdr.org)
+========================================================================
+
+This upgrade essentially boils down to unpacking the new version in the
+right place, stopping the old version, and starting the new version.
+See below for more details.
+Note: the procedure is the same as before, except for step 3.
+If you need any help with this procedure, please contact me.
+
+
+---------------------------------------------------------------------------
+Advantages of the new version:  (or: why should I bother with the upgrade?)
+---------------------------------------------------------------------------
+
+New features for the users:
+
+* FM demodulation.
+  (If your WebSDR is on a band where there's no FM, you can remove it by
+  deleting the line containing FM from pub2/websdr-controls.html ).
+
+* Memory channels.
+
+* Volume control (using an HTML5 control which looks like a slider on
+  browsers which already support it, and a textual input on others).
+
+* Squelch.
+  In contrast to many hardware squelches, this one does not react to
+  the signal level itself, but to the modulation, and as a consequence,
+  does not need a threshold control.
+
+* Automatic notch filter for SSB.
+
+* Frequencies typed in the chatbox are now clickable.
+
+* Labels on the frequency axis (as configured in stationinfo.txt) can
+  now also have a mode and are clickable.
+
+* Option to make the display of other listeners compact, so the chatbox
+  is closer to the other controls.
+
+Other:
+
+* You can now configure the initial frequency and mode (i.e., where
+  listeners find themselves upon going to the page); see doc/config.txt,
+  option 'initial').
+
+* You can now configure the administrator controls (sysop.html) to be
+  also accessible from other computers in your local network.
+  (see doc/config.txt, option 'dotrustlocalnet')
+  
+* The maximum number of users is now not enforced anymore for users
+  logging in from the server itself (and, optionally, machines on
+  the local network).
+
+* Removed the separate Java version test applet; this is useful because
+  some browsers nowadays ask the user for permission for each Java
+  applet, so reducing the number of applets means less user annoyance.
+
+* A simple configurable noiseblanker for strong local noise spikes has
+  been added; see doc/config.txt, option 'noiseblanker'.
+
+* Most signal processing is now stopped when there are no listeners; this
+  should save some energy.
+
+* The 'view last 20 entries of log' option is re-included, after accidentally
+  being omitted in the previous version.
+
+* Support for the RTL-SDRs: cheap USB DVB-T sticks which can be used as
+  general-purpose amateur SDRs. However, please use them only in situations
+  where their limited dynamic range is really sufficient, e.g., a VHF/UHF
+  amateur band with no strong local signals.
+
+* An experimental version for the Raspberry Pi.
+  The Raspberry Pi is a cheap and energy efficient little computer, but
+  it's not very fast. See doc/raspberrypi.txt for more information.
+
+* There's an experimental feature to invoke an external program to decode
+  and report WSPR signals. However, details on how to set this up in a
+  handy way still need to be worked out.
+  If you're interested in trying this, have a WebSDR which covers one of
+  the WSPR frequencies, and are comfortable with Linux, please contact me.
+
+* Support for 116 kHz samplerate (needed for one specific SDR).
+
+* Many minor changes, including bug fixes and browser compatibility issues.
+
+
+---------------------------------
+Step-by-step upgrade instructions
+---------------------------------
+
+In order to upgrade to the new version, do the following:
+
+1. Go to the /home/websdr directory, or wherever you installed the websdr.
+   Just to be sure: this is the directory which has a subdirectory named
+   'dist09' containing the previous version.
+
+2. Unpack the new websdr-dist10.tgz file here.
+   This creates a subdirectory named 'dist10' containing the new version.
+   It will not overwrite anything else.
+
+3. Please include a line like the following in your cfg/websdr.cfg :
+     org email youremail@adres.com
+   This e-mail address will NOT be shown anywhere, but it will be sent
+   to the websdr.org server. I will use this address for distributing
+   software updates in the future. 
+
+4. Stop the old websdr version, if you hadn't done so yet.
+
+5. Change into the /home/websdr/dist10 directory, and start the
+   program there: ./websdr
+   Or ./websdr64 if you have a 64-bit system.
+
+6. If you had made any changes to the files in dist09/pub2 , you may
+   want to make them again in dist10/pub2 .
+   Otherwise, the upgrade is complete!
+
+If you have problems with the new version, you can easily go back to the
+previous one, by stopping the new one, going to the dist09 directory and
+starting websdr there again.
+

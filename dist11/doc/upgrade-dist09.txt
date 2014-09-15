@@ -1,0 +1,81 @@
+=======================================================================
+Upgrade instructions for the WebSDR server (20120428, pa3fwm@amsat.org)
+=======================================================================
+
+This upgrade essentially boils down to unpacking the new version in the
+right place, stopping the old version, and starting the new version.
+See below for more details.
+Note: the procedure is the same as before, except that step 5 is new
+(and one-time only).
+
+However, if you are still running a pre-dist07 version (pre January 2011),
+then you will need to follow the older upgrade instructions. Those are
+included in the present package in dist09/doc/upgrade-dist07.txt .
+If you need any help with this procedure, please contact me.
+
+
+---------------------------------------------------------------------------
+Advantages of the new version:  (or: why should I bother with the upgrade?)
+---------------------------------------------------------------------------
+
+* Audio data is now compressed more than before. The compression level
+  can be configured (see 'audioformat' in config.txt), but the default
+  gives better audio quality than before, at about 30% lower datarate.
+  A single WebSDR user, with a single waterfall scrolling at 'slow' speed,
+  could now fit in about 80 kbit/s if you turn up the compression further.
+
+* Tuning by scrollwheel now possible, when the mousecursor is on the
+  frequency scale.
+
+* It's now possible to put labels on the frequency axis for interesting
+  stations, e.g. for beacons. See documentation at the end of
+  dist09/doc/config.txt .
+
+* Some technical improvements and bugfixes:
+  - better compatibility with different web browsers.
+  - "stripy waterfall bug" fixed.
+  - fix for Java security exceptions that some users saw.
+
+* Possibility to configure extra deep zooming, at the cost of scroll
+  speed (see 'extrazoom' in config.txt).
+
+* Support for some weird sample rates of the bt878 card.
+
+
+
+---------------------------------
+Step-by-step upgrade instructions
+---------------------------------
+
+In order to upgrade to the new version, do the following:
+
+1. Go to the /home/websdr directory, or wherever you installed the websdr.
+   Just to be sure: this is the directory which has a subdirectory named
+   'dist08'.
+
+2. Unpack the new websdr-dist09.tgz file here.
+   This creates a subdirectory named 'dist09' containing the new version.
+   It will not overwrite anything else.
+
+3. Stop the old websdr version, if you hadn't done so yet.
+
+4. Change into the /home/websdr/dist09 directory, and start the
+   program there: ./websdr
+   Or ./websdr64 if you have a 64-bit system.
+
+5. Go to the pub directory and edit the first line of the index.html file.
+   In previous versions, it was:
+     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+   This was technically correct, but some browser/OS combinations
+   (at least FireFox on MacOS) didn't like it. All browsers seem to
+   like the new and much shorter HTML5 version:
+     <!DOCTYPE HTML>
+
+6. If you had made any changes to the files in dist08/pub2 , you'll
+   want to make them again in dist09/pub2 .
+   Otherwise, the upgrade is complete!
+
+If you have problems with the new version, you can easily go back to the
+previous one, by stopping the new one, going to the dist08 directory and
+starting websdr there again.
+

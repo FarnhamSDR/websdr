@@ -1,0 +1,72 @@
+=======================================================================
+Upgrade instructions for the WebSDR server (20110606, pa3fwm@amsat.org)
+=======================================================================
+
+This upgrade essentially boils down to unpacking the new version
+in the right place, stopping the old version, and starting the
+new version. See below for more details.
+
+However, if you did not yet upgrade to the -dist07 version which I
+distributed in January 2011, then you will need to follow the older
+upgrade instructions. Those are included in the present package in
+dist08/doc/upgrade-dist07.txt .
+If you need any help with this procedure, please contact me.
+
+
+---------------------------------------------------------------------------
+Advantages of the new version:  (or: why should I bother with the upgrade?)
+---------------------------------------------------------------------------
+
+* Data for the waterfall displays is now compressed, to about a quarter
+  of what it used to be. This significantly reduces the internet bandwidth
+  usage of the system, so at sites with limited uplink speed, more
+  simultaneous users can be supported.
+
+* The feature of viewing only the last 20 lines of the logbook has
+  returned; it was accidentally omitted in -dist07.
+
+* The timing control loop in the sound applet has been improved, which
+  should cause less speed fluctuations, and thus better decoding of
+  some (digital) modes.
+
+* A bug that caused problems with some combinations of bands has been
+  fixed.
+
+* There are now buttons for zooming the waterfall in/out, besides the
+  existing use of the scroll wheel for this.
+
+* A 64-bit binary is now included in the package, which is useful if you
+  run a 64-bit Linux system.
+
+* There is preliminary support for ALSA sound devices, see config.txt.
+  This is rather experimental though; reports would be welcome.
+
+
+---------------------------------
+Step-by-step upgrade instructions
+---------------------------------
+
+In order to upgrade to the new version, do the following:
+
+1. Go to the /home/websdr directory, or wherever you installed the websdr.
+   Just to be sure: this is the directory which has a subdirectory named
+   'dist07'.
+
+2. Unpack the new websdr-dist08.tgz file here.
+   This creates a subdirectory named 'dist08' containing the new version.
+   It will not overwrite anything else.
+
+3. Stop the old websdr version, if you hadn't done so yet.
+
+4. Change into the /home/websdr/dist08 directory, and start the
+   program there: ./websdr
+   Or ./websdr64 if you have a 64-bit system.
+
+5. If you had made any changes to the files in dist07/pub2 , you'll
+   want to make them again in dist08/pub2 .
+   Otherwise, the upgrade is complete!
+
+If you have problems with the new version, you can easily go back to the
+previous one, by stopping the new one, going to the dist07 directory and
+starting websdr there again.
+

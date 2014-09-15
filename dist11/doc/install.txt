@@ -1,0 +1,86 @@
+Installation instructions for the WebSDR server (20140717, pa3fwm@amsat.org)
+----------------------------------------------------------------------------
+
+1. Preferably, create a new user account for the WebSDR. This is not
+   technically necessary, but preferable from a security point of view:
+   it limits the damage in case the WebSDR server software would turn out
+   to have a security bug.
+
+2. Make sure the newly created websdr account has permission to access
+   the soundcard; this is typically done by adding the user to the
+   'audio' group:
+     adduser websdr audio
+
+3. In that account's homedirectory, unpack the websdr-dist10a.tgz file.
+   In the sequel, I will assume that this homedirectory is /home/websdr .
+   Unpacking this file creates the complete directory structure needed for
+   the WebSDR:
+
+   /home/websdr/pub       - public files (site-specific).
+   /home/websdr/cfg       - contains site-specific configuration files.
+   /home/websdr/dist11    - non site-specific files for this version.
+   /home/websdr/dist11/doc   - contains documentation.
+   /home/websdr/dist11/log   - contains detailed log files.
+   /home/websdr/dist11/pub2  - another set of public files, non site-specific.
+   /home/websdr/dist11/pub2/tmp    - temporary public files.
+
+4. Copy the file /home/websdr/dist11/websdr.cfg to /home/websdr/cfg
+   and then use your favorite text editor to edit it (the copy in cfg,
+   not the original in dist11 !).
+   Documentation for this is provided in the file itself, in the form
+   of comment lines (lines starting with #).
+
+5. Copy the file /home/websdr/dist11/pub2/index.html to /home/websdr/pub
+   and again use your favorite text editor to edit it (the copy in pub,
+   not the original in pub2!).
+   The file as supplied works, but you may want to at least customise the 
+   textual information it contains; the two relevant places in the file
+   are marked as TODO, so you can quickly find them with a text editor.
+   Later on, when everything works fine, you can customize this file
+   further to make the page look the way you want it to, add more
+   information pages, etc.
+
+6. If you want to support mobile devices, copy the file
+   /home/websdr/dist11/pub2/m.html to /home/websdr/pub
+   and use your favorite text editor to edit it, if needed.
+   (Don't put lots of pictures in here though: this file is to be viewed
+   on small screens!)
+
+7. Go to /home/websdr/dist11 and start the websdr by typing ./websdr
+   (or ./websdr64 if you're using a 64-bit Linux system, or ./websdr-rpi
+   on a Raspberry Pi).
+   If all is well, the server should now be running!
+
+Some further notes:
+
+* If you want to run the server on port 80, so that the port number can
+  be omitted from the URL (i.e., you get http://websdr.example.org/
+  instead of something like http://websdr.example.org:8901/ ), you need
+  to make the server binary setuid root.
+  That can be done by going to /home/websdr/dist11 and typing:
+     sudo chown root websdr
+     sudo chmod 4510 websdr
+  The websdr server is written such that it only uses the root privileges
+  to open the TCP socket and drops them at all other times, to minimize
+  security risks.
+
+* The server needs several libraries. Most of them will be installed by
+  default by your Linux distribution, but two of them may not be, namely:
+    libfftw3f (i.e., version 3 of the FFTW library, compiled for float)
+  and 
+    libpng12  (i.e., version 1.2 of the PNG library).
+  Usually they will be available through your distribution's package
+  management system. In the case of Debian and Ubuntu, you can install
+  them using the following command (as root):
+    apt-get install libfftw3-3 libpng12-0
+
+* See the files in /home/websdr/dist11/doc/ for more information;
+  in particular, config.txt explains the format of the config file.
+
+
+A final remark: this software is copyrighted material.
+You do get it free of charge, but may only use it for its intended purpose,
+namely running a publicly accessible WebSDR site. Any other use, such as
+further distribution, reverse engineering, and/or reusing (parts of) the code
+in other software, is not allowed without my explicit prior permission.
+

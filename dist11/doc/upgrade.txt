@@ -1,0 +1,99 @@
+========================================================================
+Upgrade instructions for the WebSDR server (20140709, pa3fwm@websdr.org)
+========================================================================
+
+This upgrade essentially boils down to unpacking the new version in the
+right place, stopping the old version, and starting the new version.
+See below for more details.
+Note: the procedure is the same as before, except for step 3.
+If you need any help with this procedure, please contact me.
+
+
+---------------------------------------------------------------------------
+Advantages of the new version:  (or: why should I bother with the upgrade?)
+---------------------------------------------------------------------------
+
+New features for the users:
+
+* Support for HTML5 audio as an alternative to the use of Java applets.
+  This works on recent versions of Firefox, Chrome, Opera and Safari, but
+  not on IE.
+
+* Support for use on mobile devices running Android (using Firefox) and
+  iOS (using Safari). There's a separate version of the web page for
+  mobile use, optimized for their small screens, touch control, and limited
+  processing power.
+
+* Recording and then downloading the received audio (only HTML5 and not on
+  Safari).
+
+* Making a real-time graph of received signal strength.
+
+* Controlling the receiver web page via the keyboard.
+
+
+New things for you as the administrator:
+
+* It's possible to enable larger bandwidth ("HiFi") audio for SSB and AM,
+  up to about 7 instead of 4 kHz; however, it has some disadvantages, so
+  please only enable this if really useful on your site. See "allowwide"
+  in config.txt.
+
+* Some limits related to the use of RTL-SDRs have been lifted. You can now
+  use converters. However, this doesn't change the fact that these SDRs
+  have a limited dynamic range, so don't use them unless you've verified
+  that in your system they are not overloaded, e.g., by comparing reception
+  to a normal good analog receiver on the same antenna.
+
+* It is now possible to write a driver to attach other SDR hardware to the
+  WebSDR software, similar to how the rtl_tcp driver works but with 16 bits
+  per sample.
+  However, this is untested. If you are serious about writing such a driver,
+  please contact me.
+
+* I've made some changes to the reporting to the websdr.org server; this
+  should hopefully prevent the problems that in the past caused servers to
+  drop from the list.
+
+* You can now explicitly specify which IP addresses have sysop access; see
+  "dotrust" in config.txt.
+
+* If your soundcard's gain is not flat across the audio spectrum, you can
+  now compensate for this; see "equalize" in config.txt.
+
+* Many minor changes, including bug fixes and browser compatibility issues.
+
+
+---------------------------------
+Step-by-step upgrade instructions
+---------------------------------
+
+In order to upgrade to the new version, do the following:
+
+1. Go to the /home/websdr directory, or wherever you installed the websdr.
+   Just to be sure: this is the directory which has a subdirectory named
+   'dist10a' containing the previous version.
+
+2. Unpack the new websdr-dist11.tgz file here.
+   This creates a subdirectory named 'dist11' containing the new version.
+   It will not overwrite anything else.
+
+3. If you want to support mobile devices, copy the file 'm.html' from the
+   /home/websdr/dist11/pub2/ directory to /home/websdr/pub/ . You may
+   want to edit this file later to change the text on the mobile site.
+
+4. Stop the old websdr version, if you hadn't done so yet.
+
+5. Change into the /home/websdr/dist11 directory, and start the
+   program there: ./websdr
+   Or ./websdr64 if you have a 64-bit system, or ./websdr-rpi if you're
+   on a RaspberryPi.
+
+6. If you had made any changes to the files in dist10a/pub2 , you may
+   want to make them again in dist11/pub2 .
+   Otherwise, the upgrade is complete!
+
+If you have problems with the new version, you can easily go back to the
+previous one, by stopping the new one, going to the dist10a directory and
+starting websdr there again. Please report the problem to me.
+

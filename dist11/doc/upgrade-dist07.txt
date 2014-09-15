@@ -1,0 +1,178 @@
+=======================================================================
+Upgrade instructions for the WebSDR server (20110102, pa3fwm@amsat.org)
+=======================================================================
+
+These are instructions for upgrading a working WebSDR based on the
+websdr-dist05.tgz or websdr-dist06.tgz package to the new -dist07
+version.
+This upgrade is somewhat involved due to a fundamental change in how
+the files are organized. However, after this upgrade, further upgrades
+in the future should be much easier, because now files that need to be
+modified by the operator are strictly separated from those that need
+to be upgraded in a new version.
+
+
+---------------------------------------------------------------------------
+Advantages of the new version:  (or: why should I bother with the upgrade?)
+---------------------------------------------------------------------------
+
+* users can zoom in on the waterfall display;
+
+* AM demodulator has been added;
+
+* users can choose between viewing all waterfalls or just one on a
+  multi-band site;
+
+* lots of minor improvements which should remove many subtle problems
+  that only sometimes hit some users; in particular the Google Chrome
+  browser now also works;
+
+* the noniq setting now works correctly (used for VLF reception);
+
+* some efficiency improvements, enabling even more simultaneous listeners
+  at a given CPU speed;
+
+* more sanity checks and clearer error messages when the server is
+  started;
+
+* the calibrate of differences between the two audio channels
+  of the SDR hardware is now documented (see doc/iq-calibration.txt);
+
+* new file structure makes changes to the site, and future upgrades of
+  the software, easier, because there is now a clear separation between
+  files that are site-specific (and that are thus provided by you), and
+  those that are generic code (provided by me).
+
+
+---------------------------------
+Step-by-step upgrade instructions
+---------------------------------
+
+In order to upgrade to the new version, do the following:
+
+1. Make a backup (a copy) of your existing, working setup.
+
+2. Choose a base directory, preferably the home directory of a user
+   specially created for this, but it can be anything; in the sequel,
+   I'll assume this to be /home/websdr .
+
+3. Change to that base directory, and unpack the websdr-dist07.tgz file
+   there. It will create the new directory structure all by itself.
+   (Details see below.)
+
+4. Copy your existing websdr.cfg into the new /home/websdr/cfg/ directory.
+
+5. If you have created files that have I/Q calibration data, copy them
+   also into /home/websdr/cfg/ . (Most WebSDRs so far don't have this.)
+
+6. Change into the /home/websdr/dist07 directory, and start the
+   program there: ./websdr
+   Then check whether it works, although it will not yet look like your
+   old site.
+   If your websdr runs on port 80, you first have to make the websdr
+   file setuid-root, by typing as root:
+     chown root websdr
+     chmod 4510 websdr
+
+7. Now comes the hardest part: re-creating the looks of your own WebSDR,
+   by following either step 7a or 7b (and possibly 7c):
+
+7a. If you had only done trivial modifications to the index.html, it's
+   easiest to redo them from scratch.
+   Copy the file /home/websdr/dist07/pub2/index.html to /home/websdr/pub .
+   Then use your favorite text editor to modify this file (the copy in
+   pub, not the original in pub2!).
+   The places to be modified minimally are texts about the location and
+   the operator etc. of the system; they are marked as TODO, so you can
+   quickly find them.
+
+   (Remark: you'll notice that this file is _much_ shorter than it used
+   to be; all the generic html code that is needed to create the controls
+   and the waterfalls and so on, is now in separate files, that are
+   included by the <!--#include ...... --> lines.)
+
+7b. If you have done big modifications in the index.html, e.g. included
+   extra pictures, you'll have to merge your work and the new index.html
+   file.
+   You can find a "clean" example copy of the index.html file in 
+   /home/websdr/dist07/pub2/index.html .
+   Have a look at this: you'll see that all the long pieces of code that
+   were used in the past to generate the waterfalls and the controls
+   and so on, have been replaced by a short line saying
+   <!--#include ...... -->  , which in fact is a reference to a file
+   that lives in the pub2 directory and which is included there
+   automatically when the user fetches the file.
+   So you can take your own old index.html file, copy it to
+   /home/websdr/pub , and then edit it, where you replace the old
+   big chunks of code by those include lines.
+   If you can't figure it out, then send me an e-mail and I'll help you.
+
+7c. Some people have also modified the controls themselves.
+   Those controls have now moved to the pub2 directory, with the idea
+   being that whenever there is a new version, they are replaced by
+   the new version. That makes sense, because a new version may
+   introduce new controls (such as the AM mode which is new in this
+   version).
+   If you still want to modify the controls, you can do that in the pub2
+   directory, but you'll have to re-do them whenever there is a new
+   version.
+   If you have ideas on how this process can be streamlined further, 
+   please contact me.
+
+8. If you have any other files in your old pub dir that you supplied
+   yourself, such as a logo or a photograph, copy them also to the
+   new /home/websdr/pub directory.
+
+9. If you want to preserve your old logbook, copy logbook.txt from
+   your old pub/ directory to the new /home/websdr/pub .
+
+--------------------------------------------
+Technical details of the new file structure:
+--------------------------------------------
+
+The philosophy of this upgrade is that there will be a strict separation
+between files that are supplied by the WebSDR author (such as the actual
+binary, the javascript and java programs, some graphics, etc.), and the
+files provided by the operator (typically some site-specific configurations).
+In previous versions, this was all mixed up.
+The new directory structure looks as follows, assuming an installation
+as user 'websdr':
+
+/home/websdr              - home directory of that user.
+                         
+/home/websdr/pub          - contains public files, such as index.html and
+                            site-specific pictures;
+                            this directory may contain sub directories,
+                            and in fact an entire website.
+                         
+/home/websdr/cfg          - contains site-specific configuration files,
+                            usually only the websdr.cfg file.
+                         
+/home/websdr/dist07       - base directory for the files supplied by the
+                            'dist07' version of the websdr, containing
+                            some non-site-specific binary and data files,
+                            and the coarse-grained log files.
+
+/home/websdr/dist07/doc   - contains documentation.
+
+/home/websdr/dist07/log   - contains detailed log files.
+
+/home/websdr/dist07/pub2  - another set of public files; the javascript
+                            and java software is here, and some html
+                            fragments that can be included from the
+                            site-specific index.html.
+                            From the point of view of the user's web
+                            browser, the /home/websdr/pub and
+                            /home/websdr/dist07/pub2 appear as if they
+                            are merged, with the former taking
+                            precedence if an identically named file is
+                            in both.
+
+/home/websdr/dist07/pub2/tmp    - temporary public files, generated
+                                  by the server itself.
+                            
+/home/websdr/dist08       - in future: base directory for the next version.
+
+/home/websdr/dist09       - etc...
+
+

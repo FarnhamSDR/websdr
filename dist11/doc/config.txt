@@ -1,0 +1,312 @@
+====================================================================
+Configuring the WebSDR                            PA3FWM, 2014-06-08
+====================================================================
+
+Almost all of the WebSDR is configured through a single file called
+'websdr.cfg'.
+This file contains first global settings, followed by configuration
+for each band.
+Each line starts with a keyword, followed by one or more arguments,
+as detailed below.
+
+====================================================================
+Global configuration statements:
+====================================================================
+
+____________________
+Access to the server
+^^^^^^^^^^^^^^^^^^^^
+
+myhost x
+  Only bind to this address; useful if your server has multiple IP
+  addresses. Note: if x is an IPv4 address, precede it with ::ffff: 
+  to make it look like an IPv6 address.
+
+tcpport x
+  Set the TCP port number on which the server should work.
+  (That's e.g. the 8901 in http://websdr.ewi.utwente.nl:8901/ )
+  Default is 80, which is also the default web browsers use when none
+  is specified. However, this requires running the websdr as root.
+
+chroot x
+  After starting, perform a chroot() to x.
+  This can be used as a security measure (although I don't do it on my
+  own server). It does require the websdr to be setuid root, but those
+  privileges are dropped immediately as soon as possible.
+
+rawpassword x
+  Set a password to restrict access to the raw data stream.
+  Default is no password. (This is not a security risk.)
+
+donttrustlocalhost
+  Including this line DISables sysop access even from the machine
+  itself.
+  You only need this if your websdr is running on a machine that is
+  shared with users that you don't trust.
+  The "sysop access" referred to includes two things:
+  - using the administrator interface in sysop.html;
+  - still accessing the receiver even if the maxusers limit has been
+    reached.
+
+dotrustlocalnet
+  Including this line ENables sysop access from all computers in the
+  local IP range (10.*.*.* and 192.168.*.*).
+  Use this only if you trust all users on your local network.
+
+dotrust x
+  Allow sysop access from address x (you may include multiple addresses
+  here, separated by spaces).
+
+____________________
+Where are the files?
+^^^^^^^^^^^^^^^^^^^^
+
+chatboxlogfile x
+  Log all chatbox message into a file named x.
+
+logfileinterval x
+  Set the time (in seconds) after which the next logfile is started and
+  the previous one is zipped. Default is 3600 (i.e., one hour).
+  If you set it to 0, no log file is written, but log messages are sent
+  to stderr.
+
+logdir x
+  Set the directory containing log files to x.
+  Default is log
+
+public x
+  Set the directory containing the public files (html etc.) to x.
+  Default is ../pub
+
+public2 x
+  Set the second directory containing the public files (html etc.) to x.
+  This directory is also searched for server-side includes.
+  Default is pub2
+
+___________________
+Processing settings
+^^^^^^^^^^^^^^^^^^^
+
+maxusers x
+  Limits the number of simultaneous users to x.
+  (Users from localhost or the local network can still be allowed
+  beyond this limit; see the donttrustlocalhost and dotrustlocalnet
+  settings.)
+
+slowdownusers x
+  Only allow slow waterfalls when number of listeners exceeds x.
+  Useful to save CPU power on slow computers, or network bandwidth
+  on slow links.
+
+slowdownusers2 x
+  Slow down waterfalls to half the normal minimum speed when number
+  of listeners exceeds x.
+
+fftplaneffort x
+  Sets the FFTW library's planning effort to x, where x may be:
+   0 for FFTW_ESTIMATE
+   1 for FFTW_MEASURE
+   2 for FFTW_PATIENT
+   3 for FFTW_EXHAUSTIVE
+  Higher numbers make the program start up slower but may result in
+  reducing the CPU load, because the library tries to optimize the FFT
+  calculation. Default is 0.
+
+waterfallformat x
+  Set the dataformat for the waterfall datastream.
+  x=0 gives the old uncompressed, 8 bit per pixel format.
+  x=8 uses on average 2.9 bits per pixel.
+  x=9 is the default now: compression to between 1.5 and 2.3 bits
+      per pixel with very few artefacts.
+
+audioformat x
+  Set the amount of compression for the audiodata.
+  x can be from 0 to 3.
+  The higher x, the larger the quantisation noise will be.
+  Normally, x=0 (which is the default) should be good; but if your
+  network bandwidth is really limited, you could try others.
+  (I've used x=2 at my home system with hardly any user complaints;
+  x=3 was found too noisy.)
+  
+initial x y
+  Set the initial frequency to x kHz with mode y (usb/lsb/am/cw/fm).
+
+allowwide
+  Allow bandwidth setting of SSB and AM signals to be widened beyond
+  the normal 4 and 8 kHz, respectively; useful for better sound quality
+  on AM broadcast signals, but puts a higher load on the internet link.
+  Also, this is only properly supported for HTML5 audio; there are
+  aliasing products audible when using Java.
+  Finally, changing the bandwidth while recording also may not work
+  correctly (WAV files don't support changing samplerates).
+
+idletimeout x
+  Set a timeout of x seconds for idle users (i.e., users who don't
+  change the frequency etc. for x seconds are disconnected).
+  Can be useful if your site is popular and has limited internet
+  bandwidth.
+
+
+___________________________________________________________
+Settings related to the appearance on http://www.websdr.org
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+noorgserver
+  Including this line prevents your server from being listed on the
+  http://www.websdr.org/ site.
+  
+hostname x
+  Set your own hostname. If set, this name will be displayed on
+  http://www.websdr.org instead of your IP address.
+
+org .......
+  Set data to be sent to the websdr.org server.
+  Current possibilities are:
+   org qth x               - set QTH locator
+   org description x       - set a brief description of your site
+   org logo x              - set the filename of the logo picture
+   org email x             - your e-mail address
+  Note: the e-mail address will NOT appear on websdr.org; it only serves
+  to give PA3FWM your contact information so he knows whom to contact if
+  there is a problem, and whom to send software updates to.
+  Out of the above, only the logo is optional; the others are necessary.
+                 
+
+
+====================================================================
+Per-band configuration statements:
+====================================================================
+
+band x
+  Start configuration for a band named x.
+  Should be the first statement of the settings for a band.
+
+device x
+  Sets the input device to x, like /dev/dsp0 .
+  ALSA device names can be used too, prefixed by a '$', like  $hw:0,0,0
+
+device x y
+  Alternative syntax for use with a multi-input sound card.
+  y is the device name like /dev/dsp0, while x is a single digit number:
+  0 for the first two inputs, 1 for the next two inputs, etc.
+  All bands sharing the card must have the same samplerate, and they
+  cannot have the 'noniq' setting (see below), nor be ALSA devices.
+
+device !rtlsdr x:y z
+  Sets the input device to be an RTL-SDR (DVB-T USB dongle), through
+  the rtl_tcp driver running at host x on port y, with ppm correction z.
+  Supported samplerates for use with the RTL-SDR are 256000, 512000,
+  768000, 1024000, 1536000, 2048000 and 2880000 Hz.
+  For use with up/down converters, see 'progfreq' elsewhere in this document.
+
+  Note: these dongles have a rather small dynamic range. As a consequence,
+  when there are strong signals in the passband, weaker signals in the
+  passband disappear into the noise floor. For a WebSDR this is not good,
+  because the idea behind a WebSDR is that each user can tune independently
+  to any signal within the band.
+  So please run a WebSDR with an RTL-SDR only after you've verified that
+  in your system it is not overloaded, e.g., by comparing reception of
+  weak signals to a normal good analog receiver on the same antenna. 
+
+extrazoom x
+  Increase the maximum zoom depth by x steps.
+  Each step doubles the maximum resolution, but halves the maximum
+  (and default) waterfall scroll speed. The default is 0. Higher
+  values may be useful to provide longer integration for long-duration
+  carriers, but the WebSDR is not really a good tool for this...
+
+samplerate x
+  Set samplerate (in Hz).
+
+centerfreq x
+  Set center frequency (in kHz)
+  Note that the WebSDR software cannot control the SDR hardware (except
+  the rtlsdr). In case of a fixed-frequency SDR, you just write the SDR's
+  center frequency as determined by the SDR's crystal. If you have an
+  SDR with a synthesizer, you need some external software to set the
+  SDR hardware to the same frequency as you write here.
+
+progfreq x
+  In case you have external SDR hardware of which the WebSDR software
+  controls the frequency (practically speaking: RTL-SDRs), this setting
+  can be used to specify to what frequency (in kHz) the hardware should
+  be programmed, different from centerfreq. This is useful in case of
+  use with an up/down converter.
+
+noniq
+  Input data is treated as a baseband signal (mono), instead of an I/Q
+  quadrature (stereo) signal. This is useful for a VLF receiver, with
+  the antenna connected directly to the soundcard.
+  With 'noniq' set, the 'centerfreq' setting is interpreted not as the
+  center of the passband, but as the left end of the passband (i.e., 0
+  in the VLF case).
+
+swapiq
+  Swap the I and Q (left and right) channels.
+  Use this if the passband appears mirrored.
+
+balance x
+  Read balancing data from file x.
+  Use this to compensate for minor differences in the I and Q channels
+  causing signals to appear "mirrored".
+  See separate documentation in doc/iq-balance.txt .
+
+antenna x
+  Short description of the antenna, to be listed on http://www.websdr.org.
+
+delay x
+  Artificially delay signals by x seconds.
+  Useful to prevent cheating in contests, if your receiver is so special
+  that using it would give participants an unfair advantage (e.g., a very
+  big dish for EME).
+
+gain x
+  Insert x dB of gain (may be negative).
+  This does not make an audible difference; it only shifts the waterfall
+  colour scale and the S meter, so you can use this to calibrate the
+  S meter.
+
+equalize z
+  Read equalizing data from file x.
+  This is basically a frequency-dependent version of the above 'gain'
+  setting. It can be used to compensate for minor gain variations of
+  the soundcard channels.
+  The file has a very simple format: each line has a frequency in kHz
+  and a corresponding gain correction in dB.
+  The software will interpolate between the given frequencies.
+  The frequencies are "audio"/"baseband" frequencies, not the radio
+  frequencies.
+
+hpf x
+  Set the cut-off frequency to the input high-pass filter to x Hz.
+  This filter cuts out the DC offset and possibly other low-frequency
+  noise (e.g. mains hum) at the soundcard input.
+  This is just a first-order filter, so it is not very steep.
+  Setting it to 0 removes the filter entirely.
+  Default is 500 Hz.
+
+noiseblanker x
+  Enables a simple noise blanker, where x sets the threshold factor.
+  The higher x is, the higher the threshold above which a noise spike
+  needs to rise to be blanked; a value on the order of 80 makes sense,
+  but experimentation may be needed.
+  Due to its simplicity, this noise blanker is probably only useful
+  if you have rather strong local noise sources, e.g., an electric
+  fence.
+
+
+====================================================================
+Station information for labels on the frequency scale
+====================================================================
+
+If you want to put some labels on the frequency scale, e.g., to mark
+beacons or other permanent stations of special interest, you can put
+them in a file called 'stationinfo.txt' in the cfg/ directory.
+The format of this file is very simple: each line has a frequency
+in kHz followed by a brief description (e.g., callsign).
+You can also include a mode (am/usb/lsb/cw/fm) directly after the
+frequency. For example:
+  14100cw International beacons
+This file is re-read every minute, so if you make a change, you do
+not need to restart the server.
+
