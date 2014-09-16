@@ -78,7 +78,7 @@
 437000fm Digital ATV
 437025usb Chasqui-1
 437230usb Firebird U2
-437250usb Prism&AISat
+437250usb Prism&AISat&ESTCube-1
 437270usb IPEX
 437275usb Cute-1.7
 437303usb OREOS
@@ -92,7 +92,7 @@
 437445usb LO-74
 437465usb CO-58
 437485fm CO-66
-437505usb MO-76&SwissCube-1
+437505usb MO-76&SwissCube-1&ESTCube-1
 437525usb Sprout
 437550usb LO-78
 437600usb AENEAS
