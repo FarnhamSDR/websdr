@@ -77,25 +77,27 @@
 436847usb CO-57
 437000fm Digital ATV
 437025usb Chasqui-1
+437100usb NO-45
 437230usb Firebird U2
 437250usb Prism&AISat&ESTCube-1
 437270usb IPEX
 437275usb Cute-1.7
+437280usb Antelsat
 437303usb OREOS
-437305usb Vermont Lunar
+437305usb Vermont Lunar&AO-51
 437325usb pSat1
 437378usb HORYU-2
 437385usb UWE-3
 437345usb MO-72&ZACube1
 437397usb Firebird U1
 437405usb POPSAT-HIP1
-437425usb PhoneSat
-437445usb LO-74
+437425usb PhoneSat&UniSat-6
+437445usb LO-74&BugSat1
 437465usb CO-58
-437485fm CO-66
+437485usb CO-66&Goliat
 437505usb MO-76&SwissCube-1&ESTCube-1
 437525usb Sprout
-437550usb LO-78
+437550usb LO-78&ISS Simplex
 437600usb AENEAS
 437767usb PolyITAN
 144050usb CW Calling
@@ -193,6 +195,7 @@
 145880usb QB50p2
 145915usb FUNCUBE2
 145935usb FUNCUBE1
+145940usb QB50p1 Transponder
 145950usb AO-7 Transponder
 145970usb AO-7
 145975usb A0-73 Transponder
