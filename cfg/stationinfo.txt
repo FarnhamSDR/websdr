@@ -66,6 +66,7 @@
 434950fm RB14 In
 434975fm RB15 In
 435000usb TigriSat
+435180fm LituanicaSAT-1 Up
 435225usb DX-1
 435315usb RS-30
 435352usb RS-22
@@ -81,7 +82,7 @@
 437230usb Firebird U2
 437250usb Prism&AISat&ESTCube-1
 437270usb IPEX
-437275usb Cute-1.7
+437275usb Cute-1.7&LituanicaSAT-1
 437280usb Antelsat
 437303usb OREOS
 437305usb Vermont Lunar&AO-51
@@ -97,7 +98,7 @@
 437485usb CO-66&Goliat
 437505usb MO-76&SwissCube-1&ESTCube-1
 437525usb Sprout
-437550usb LO-78&ISS Simplex
+437550usb LO-78&LituanicaSAT-1&ISS Simplex
 437600usb AENEAS
 437767usb PolyITAN
 144050usb CW Calling
@@ -196,7 +197,8 @@
 145915usb FUNCUBE2
 145935usb FUNCUBE1
 145940usb QB50p1 Transponder
-145950usb AO-7 Transponder
+145950fm LituanicaSAT-1
+145955usb AO-7 Transponder
 145970usb AO-7
 145975usb A0-73 Transponder
 145980usb DUCHIFAT&TISat1
