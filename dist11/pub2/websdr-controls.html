@@ -228,7 +228,25 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   </span>
 </div>
 
+<div class="ctl">
+  <b>Logbook:</b>
+  <form name="logform" action="#">
+  Call of station that you hear: <input type="text" size=12 name="call" onclick="">
+  <br>
+  Comments, if any: <input type="text" size=30 name="comment" onclick="">
+  <input type="button" value="submit" onclick="return sendlog()">
+  </form>
+  <span style="font-size:80%">
+    Note: time, frequency, your name/call, and DXCC information are added automatically.
+    <br>
+    View the <a href="~~logbook?nr=20">last 20 lines of the logbook</a>,
+    or the <a href="logbook.txt">entire logbook</a> (ctrl-click for new tab/window).
+  </span>
+</div>
 
+
+<br style="clear:both">
+<hr>
 <form name="form1" action="#">
 This WebSDR is currently being used by <span id=numusers>?</span> user(s) simultaneously:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input id="compactviewcheckbox" type="checkbox" name="compactview" value="" onclick="setcompactview(this.checked)">compact view
@@ -260,27 +278,6 @@ document_username();
 </form>
 <br>
 </div>
-
-<div class="ctl">
-  <b>Logbook:</b>
-  <form name="logform" action="#">
-  Call of station that you hear: <input type="text" size=12 name="call" onclick="">
-  <br>
-  Comments, if any: <input type="text" size=30 name="comment" onclick="">
-  <input type="button" value="submit" onclick="return sendlog()">
-  </form>
-  <span style="font-size:80%">
-    Note: time, frequency, your name/call, and DXCC information are added automatically.
-    <br>
-    View the <a href="~~logbook?nr=20">last 20 lines of the logbook</a>,
-    or the <a href="logbook.txt">entire logbook</a> (ctrl-click for new tab/window).
-  </span>
-</div>
-
-
-<br style="clear:both">
-<hr>
-
 
 <hr>
 <div style="font-size:80%">
