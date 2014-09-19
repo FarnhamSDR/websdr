@@ -195,26 +195,8 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <span id="numericalsmeter">?</span> dB;
   peak
   <span id="numericalsmeterpeak">?</span> dB;
-  <br>
-  <input id="mutecheckbox" title="disable sound" type="checkbox" value="" onclick="setmute(this.checked)">mute
-  <input id="squelchcheckbox" title="block noise if no signal" type="checkbox" value="" onclick="setsquelch(this.checked)">squelch
-  <input id="autonotchcheckbox" title="automatically filter out interfering carrier (beep/whistle)" type="checkbox" value="" onclick="setautonotch(this.checked)">autonotch
-  <br>
-  <span id="volumecontrol" style="white-space:nowrap; width:50%">
-    Volume:
-    <input type="range" min="-20" max="6" id="volumecontrol2" name="volume" value="0" step="1"
-    oninput="soundapplet.setvolume(Math.pow(10,this.value/10.))"
-    onchange="soundapplet.setvolume(Math.pow(10,this.value/10.))">
-  </span>
-  <div id="record_span" style="display:none">
+    ,br>
     <hr>
-    <b>Audio recording: </b>
-    <button id="recbutton" onclick="record_click(); return false">start</button>
-    <span id="reccontrol"></span>
-    <br>
-    <div id="recwarning" style="width:300px; display:none; font-size:-1; color:red">Your browser does not seem to support downloading the recording; please try a recent version of Firefox, Chrome or Opera.</div>
-  </div>
-  <hr>
     <b>Signal strength plot:</b>
     <select id="sgraphchoice">
       <option value=0>none</option>
@@ -224,6 +206,26 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <div>
     <canvas id="sgraph" style="width:100%; display:none;"></canvas>
   </div>
+  <br>
+  <input id="mutecheckbox" title="disable sound" type="checkbox" value="" onclick="setmute(this.checked)">mute
+  <input id="squelchcheckbox" title="block noise if no signal" type="checkbox" value="" onclick="setsquelch(this.checked)">squelch
+  <input id="autonotchcheckbox" title="automatically filter out interfering carrier (beep/whistle)" type="checkbox" value="" onclick="setautonotch(this.checked)">autonotch
+  <br>
+    <div id="record_span" style="display:none">
+    <hr>
+    <b>Audio recording: </b>
+    <button id="recbutton" onclick="record_click(); return false">start</button>
+    <span id="reccontrol"></span>
+    <br>
+    <div id="recwarning" style="width:300px; display:none; font-size:-1; color:red">Your browser does not seem to support downloading the recording; please try a recent version of Firefox, Chrome or Opera.</div>
+  </div>
+  <hr>
+  <span id="volumecontrol" style="white-space:nowrap; width:50%">
+    Volume:
+    <input type="range" min="-20" max="6" id="volumecontrol2" name="volume" value="0" step="1"
+    oninput="soundapplet.setvolume(Math.pow(10,this.value/10.))"
+    onchange="soundapplet.setvolume(Math.pow(10,this.value/10.))">
+  </span>
 </div>
 
 <div class="ctl">
