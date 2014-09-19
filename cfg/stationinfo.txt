@@ -79,7 +79,7 @@
 437000fm Digital ATV
 437025usb Chasqui-1
 437100usb NO-45
-437230usb Firebird U2
+437230usb Firebird U2&SpinSat
 437250usb Prism&AISat&ESTCube-1
 437270usb IPEX
 437275usb Cute-1.7&LituanicaSAT-1
