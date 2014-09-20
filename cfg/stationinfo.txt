@@ -197,7 +197,6 @@
 145915usb FUNCUBE2
 145935usb FUNCUBE1
 145940usb QB50p1 Transponder
-145950fm LituanicaSAT-1
 145955usb AO-7 Transponder
 145970usb AO-7
 145975usb A0-73 Transponder
