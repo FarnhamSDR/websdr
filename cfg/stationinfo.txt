@@ -74,7 +74,7 @@
 435800usb FO-29 (JAS2) >Transponder>
 435900usb FO-29 (JAS2) <Transponder<
 435950usb BeeSat-2
-435975usb FO-29 (JAS-2)
+435796.4usb FO-29 (JAS-2)
 436000usb BeeSat
 436395usb UWE-3
 436795usb AO-27
