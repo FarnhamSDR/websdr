@@ -70,7 +70,11 @@
 435225usb DX-1
 435315usb RS-30
 435352usb RS-22
+435975fm FO-29 (JAS-2) Digitalker
+435800usb FO-29 (JAS2) >Transponder>
+435900usb FO-29 (JAS2) <Transponder<
 435950usb BeeSat-2
+435975usb FO-29 (JAS-2)
 436000usb BeeSat
 436395usb UWE-3
 436795usb AO-27
