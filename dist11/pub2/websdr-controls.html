@@ -15,7 +15,7 @@ It seems Java is not installed or disabled on your computer. You need to install
 Your browser does not seem to support HTML5 WebAudio; please try a recent version of Firefox, Chrome, Opera or Safari; or switch to Java.
 </div>
 <hr>
-<font color="red"Please note that this WebSDR no longer supports JAVA - Please try a recent version of Firefox, Chrome, Opera or Safari that runs HTML5</font></font>
+<font color="red"Please note that this WebSDR no longer supports JAVA - Please try a recent version of Firefox, Chrome, Opera or Safari that runs HTML5</font>
 <hr>
 <form name="html5choiceform" action="#" style="float:left">
 <div class="ctl">
@@ -212,8 +212,6 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   </span>
 </div>
 
-
-
 <div class="ctl">
   <div class="hideblind">
     <div style="width:250px;background-color:black;">
@@ -236,9 +234,10 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
     <hr>
     <b>Signal strength plot:</b>
     <select id="sgraphchoice">
-      <option value=0>none</option>
+      <option selected value=0>none</option>
       <option value=1>fast</option>
       <option value=10>slow</option>
+      <option value=100>very slow</option>
     </select>
   <div>
     <canvas id="sgraph" style="width:100%; display:none;"></canvas>
