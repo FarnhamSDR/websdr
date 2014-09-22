@@ -262,40 +262,36 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
     oninput="soundapplet.setvolume(Math.pow(10,this.value/10.))"
     onchange="soundapplet.setvolume(Math.pow(10,this.value/10.))">
   </span>
-
-
-<br>
-<hr>
 </div>
-<table>
+
+<br style="clear:both">
+<hr>
+
 <form name="form1" action="#">
 This WebSDR is currently being used by <span id=numusers>?</span> user(s) simultaneously:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input id="compactviewcheckbox" type="checkbox" name="compactview" value="" onclick="setcompactview(this.checked)">compact view
 <br>
 <div id=users></div>
 </form>
-</table>
-
-<br style="clear:both">
-
 <hr>
-
-
-<div>
-<b>SUWS uWave Web SDR News:</b>
+  
+<div class="hideblind">
+<div class="ctl">
+  <table cellwidth=500 align=left>
+  <tr>
+  <td>
+<p><b>News:</b></p>
 <br>
-<br>
-<table style="background-color:#FFFF99;" width="100%" height="50" align="left">
 
-<tr><td><small>The waterfall now has new options to select a much larger and slower waterfall display, which is useful for monitoring Stats and Beacons</small></td></tr>
-<tr><td><small>A much slower time selection has also been added to the signal strength plot option, in order to aid monitoring beacons </small></td></tr>
-</table>
+Test 1234
+  
 </div>
-<br>
-<br>
-<br>
-<hr>
+</div>
+</table>
 
+<div class="showblind">
+
+<hr>
 <div id="chatboxspan">
 <p><b>Chatbox:</b><br>
 <span style="font-size:80%">
@@ -347,4 +343,3 @@ Statistics:
 
 <hr>
 <div id="soundappletdiv"></div>
-
