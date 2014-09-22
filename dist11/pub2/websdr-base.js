@@ -1173,20 +1173,14 @@ function html5orjavamenu()
       if (sup_socket && sup_canvas) usecookie="n"; else usecookie="y";
       if (sup_socket && (sup_webaudio || sup_mozaudio)) usecookie+="n"; else usecookie+="y";
    }
-   usejavawaterfall=(usecookie.substring(0,1)=='y');
-   usejavasound=(usecookie.substring(1,2)=='y');
    
-   var javacolor=checkjava();
    s='<b>Waterfall:</b>';
-   s+='<span style="color: '+javacolor+'"><input type="radio" name="groupw" value="Java" onclick="html5orjava(0,1);"'+(usejavawaterfall?" checked":"")+'>Java</span>';
-   if (sup_socket && sup_canvas) s+='<span style="color:green">'; else s+='<span style="color:red">';
-   s+='<input type="radio" name="groupw" value="HTML5" onclick="html5orjava(0,0);"'+(!usejavawaterfall?" checked":"")+'>HTML5</span>';
+   if (sup_socket && sup_canvas) s+='<span style="color:green">HTML5 OK</span>';
+   else s+='<span style="color:red">HTML5 Error</span>';
    s+='&nbsp;&nbsp;&nbsp;<b>Sound:</b>';
-   s+='<span style="color: '+javacolor+'"><input type="radio" name="groupa" value="Java" onclick="html5orjava(1,1);"'+(usejavasound?" checked":"")+'>Java</span>';
-   if (sup_socket && sup_webaudio) s+='<span style="color: green">';
-   else if (sup_socket && sup_mozaudio) s+='<span style="color: blue">';
-   else s+='<span style="color: red">';
-   s+='<input type="radio" name="groupa" value="HTML5" onclick="html5orjava(1,0);"'+(!usejavasound?" checked":"")+'>HTML5</span>';
+   if (sup_socket && sup_webaudio) s+='<span style="color: green">HTML5 OK</span>';
+   else if (sup_socket && sup_mozaudio) s+='<span style="color: blue">HTML5 OK</span>';
+   else s+='<span style="color: red">HTML5 Error</span>';
    if (sup_iOS && sup_socket && sup_webaudio) s+='<input type="button" value="iOS audio start" onclick="iOS_audio_start()">';
    document.getElementById('html5choice').innerHTML = s;
    document.getElementById('record_span').style.display = usejavasound ? "none" : "inline";
