@@ -1173,6 +1173,8 @@ function html5orjavamenu()
       if (sup_socket && sup_canvas) usecookie="n"; else usecookie="y";
       if (sup_socket && (sup_webaudio || sup_mozaudio)) usecookie+="n"; else usecookie+="y";
    }
+   usejavawaterfall=(usecookie.substring(0,1)=='y');
+   usejavasound=(usecookie.substring(1,2)=='y');
    
    s='<b>Waterfall:</b>';
    if (sup_socket && sup_canvas) s+='<span style="color:green">HTML5 OK</span>';
