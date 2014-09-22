@@ -116,7 +116,7 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
     </tr>
     <tr>
     <td>
-    <span style="font-size:65%">You can also click on the waterall and use the mouse scroll wheel.</span>
+    <span style="font-size:65%">You can also click on the main waterall and use the mouse scroll wheel.</span>
     </td>
     </tr>
   </table>
@@ -180,14 +180,14 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <br>
   <table>
     <tr>
-    <td><input type="button" value="wider"   onclick="lo-=0.03125; hi+=0.03125; updbw();"></td>
+ 
     <td><input type="button" value="CW"      onclick="setmf ('cw', 0.55, 0.95);"></td>
     <td><input type="button" value="LSB"     onclick="setmf('lsb', -2.7, -0.3);"></td>
     <td><input type="button" value="USB"     onclick="setmf('usb',  0.3,  2.7);"></td>
     <td><input type="button" value="AM"      onclick="setmf ('am',  -4  ,  4  );"></td>
     <td><input type="button" value="FM"      onclick="setmf ('fm',  -5  ,  5  );"></td>
     </tr><tr>
-    <td><input type="button" value="narrower" onclick="lo+=0.03125; hi-=0.03125; updbw();"></td>
+  
     <td><input type="button" value="CW-nrw"   onclick="setmf('cw', 0.72, 0.78);"></td>
     <td><input type="button" value="LSB-nrw"  onclick="setmf('lsb', -2.2, -0.5);"></td>
     <td><input type="button" value="USB-nrw"  onclick="setmf('usb',  0.5,  2.2);"></td>
@@ -197,6 +197,8 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   </table>
   <span class="hideblind">
   <span style="font-size:65%">Or drag the passband edges on the frequency scale.</span>
+  <td><input type="button" value="wider"   onclick="lo-=0.03125; hi+=0.03125; updbw();"></td>
+  <td><input type="button" value="narrower" onclick="lo+=0.03125; hi-=0.03125; updbw();"></td>
   </span>
 </div>
 
