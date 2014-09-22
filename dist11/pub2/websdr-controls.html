@@ -75,9 +75,9 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <b>Waterfall view:    </b>
 
   <script type="text/javascript"> if (dxinfoavailable) document.write('<input type="checkbox" name="hidedx" value="" onclick="sethidedx(this.checked)">Hide labels');     </script>
-  </td>
+ 
    
-  <td>
+  
     Speed:
     <select id="wfspeed" onchange="waterfallspeed(this.value)">
       <option value="30">super slow</option>
@@ -86,8 +86,7 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
       <option value="2">medium</option>
       <option value="1">fast</option>
     </select>
-    </td>
-    <td>
+
     Size:
     <select id="wfsize" onchange="waterfallheight(this.value)">
       <option value="50">small</option>
@@ -96,8 +95,7 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
        <option value="400">larger</option>
       <option value="600">huge</option>
     </select>
-    </td>
-    <td>
+   
     View:
     <select id="wfmode" onchange="waterfallmode(this.value)">
       <option value="0">spectrum</option>
@@ -106,6 +104,7 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
       <option value="3">strong sigs</option>
     </select>
   </td>
+  </tr>
 
    <td>
     <span title="view entire frequency range of this receiver"><input type="button" value="max out" onclick="wfset(4);"></span>
