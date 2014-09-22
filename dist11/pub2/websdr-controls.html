@@ -133,6 +133,12 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <table>
     <tr>
     <td>
+        Speed:
+    <select id="wfspeed" onchange="waterfallspeed(this.value)">
+      <option value="4">slow</option>
+      <option value="2">medium</option>
+      <option value="1">fast</option>
+    </select>
     <span title="view entire frequency range of this receiver"><input type="button" value="max out" onclick="wfset(4);"></span>
     <span title="zoom out one step"><input type="button" value="zoom out" onclick="wfset(1);"></span>
     <span title="zoom in one step"><input type="button" value="zoom in" onclick="wfset(0);"></span>
@@ -143,12 +149,7 @@ Your browser does not seem to support HTML5 WebAudio; please try a recent versio
   <span style="font-size:65%">Or use scroll wheel and dragging on waterfall.</span>
     </td></tr>
     <tr><td>
-    Speed:
-    <select id="wfspeed" onchange="waterfallspeed(this.value)">
-      <option value="4">slow</option>
-      <option value="2">medium</option>
-      <option value="1">fast</option>
-    </select>
+
     <br>
     Size:
     <select id="wfsize" onchange="waterfallheight(this.value)">
