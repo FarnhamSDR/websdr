@@ -1176,10 +1176,10 @@ function html5orjavamenu()
    usejavawaterfall=(usecookie.substring(0,1)=='y');
    usejavasound=(usecookie.substring(1,2)=='y');
    
-   s='<b>Waterfall:</b>';
+   s='<b>Waterfall:</b>&nbsp;';
    if (sup_socket && sup_canvas) s+='<span style="color:green">HTML5 OK</span>';
    else s+='<span style="color:red">HTML5 Error</span>';
-   s+='&nbsp;&nbsp;&nbsp;<b>Sound:</b>';
+   s+='&nbsp;&nbsp;&nbsp;<b>Sound:</b>&nbsp;';
    if (sup_socket && sup_webaudio) s+='<span style="color: green">HTML5 OK</span>';
    else if (sup_socket && sup_mozaudio) s+='<span style="color: blue">HTML5 OK</span>';
    else s+='<span style="color: red">HTML5 Error</span>';
