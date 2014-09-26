@@ -204,4 +204,3 @@
 145970usb AO-7
 145975usb A0-73 Transponder
 145980usb DUCHIFAT&TISat1
-
