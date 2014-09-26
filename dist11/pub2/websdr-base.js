@@ -116,10 +116,15 @@ function send_soundsettings_to_server()
 {
   var m=mode;
   if (m=="USB") m=0;
+  else if (m=="USBN") m=0;
   else if (m=="LSB") m=0;
+  else if (m=="LSBN") m=0;
   else if (m=="CW") m=0;
+  else if (m=="CWN") m=0;
   else if (m=="AM") m=1;
+  else if (m=="AMN") m=1;
   else if (m=="FM") m=4;
+  else if (m=="FMN") m=4;
   try {
      soundapplet.setparam(
          "f="+freq
