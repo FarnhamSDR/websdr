@@ -403,10 +403,15 @@ function set_mode(m)      // ...with appropriate filter
 {
    switch (m.toUpperCase()) {
       case "USB": setmf("usb", 0.3,  2.7); break;
+      case "USBn": setmf("usbn", 0.5, 2.2); break;
       case "LSB": setmf("lsb", -2.7, -0.3); break;
-      case "AM":  setmf("am", -4,  4); break;
+      case "LSBn": setmf("lsbn", -2.2, 0.5); break;
+      case "AM":  setmf("am", -4, 4); break;
+      case "AMn":  setmf("amn", -2.5, 2.5); break;
       case "CW":  setmf("cw", 0.55, 0.95); break;
-      case "FM":  setmf("fm", -5   ,  5); break;
+      case "CWn":  setmf("cwn", 0.72, 0.78); break;
+      case "FM":  setmf("fm", -5 , 5); break;
+      case "FMn":  setmf("fmn", -2.5  , 2.5); break;
    }
 }
 
@@ -1210,7 +1215,7 @@ function bodyonload()
 
    var x= readCookie('username');
    var p=document.getElementById("please2");
-   if (!x && p) p.innerHTML="<b><i>Please type a name or callsign in the box at the <a href='#please'>top of the page</a> to identify your chat messages!</i></b>";
+   if (!x && p) p.innerHTML="<b><i>Please type a name or callsign in the box at the <a href='#please'>top of the chat box</a> to identify your chat messages!</i></b>";
 
    uu_compactview=document.getElementById("compactviewcheckbox").checked;
    document.getElementById("mutecheckbox").checked=false;
