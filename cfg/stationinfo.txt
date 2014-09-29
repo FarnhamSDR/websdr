@@ -105,6 +105,8 @@
 437600usb AENEAS
 437767usb PolyITAN
 144050usb CW Calling
+144137usb PSK31 calling
+144140usb ~JT65~
 144200usb MS Calling
 144300usb SSB Calling
 144403.1cw EI2WRB
