@@ -104,6 +104,16 @@
 437550usb LO-78/ISS Simplex
 437600usb AENEAS
 437767usb PolyITAN
+143050usb Graves Radar
+143750fm Illegal Air use
+143775fm Illegal Air use
+143800fm Illegal Air use
+143825fm Illegal Air use
+143850fm Illegal Air use
+143875fm Illegal Air use
+143900fm Illegal Air use
+143925fm Illegal Air use
+143950fm Illegal Air use
 144050usb CW Calling
 144137usb PSK31 calling
 144140usb ~JT65~
@@ -207,3 +217,12 @@
 145970usb AO-7
 145975usb A0-73 Transponder
 145980usb DUCHIFAT/TISat1
+146500fm Wideband digital modes
+146900fmn Narrow Digital
+146912.5fmn Narrow Digital
+146925fmn Narrow Digital
+146937.5fmn Narrow Digital
+146950fmn Narrow Digital
+146962.50fmn Narrow Digital
+146975fmn Narrow Digital
+146987.5fmn Narrow Digital
