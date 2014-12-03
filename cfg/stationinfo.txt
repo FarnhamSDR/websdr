@@ -69,8 +69,6 @@
 435225usb DX-1
 435315usb RS-30
 435352usb RS-22
-435465usb RS-46
-435565usb RS-46
 435975fm FO-29 (JAS-2) Digitalker
 435800usb FO-29 (JAS2) >Transponder------
 435900usb FO-29 (JAS2) ------Transponder<
@@ -86,37 +84,26 @@
 437100usb NO-45
 437230usb Firebird U2/SpinSat
 437250usb Prism/AISat/ESTCube-1/TSUBAME
-437270usb IPEX/Shin’en2
+437270usb IPEX
 437275usb Cute-1.7
 437280usb Antelsat
 437303usb OREOS
 437305usb Vermont Lunar&AO-51
-437325usb pSat1/ARTSAT2
-437345usb MASAT-1
+437325usb pSat1
 437378usb HORYU-2
-437385usb UWE-3/Shin’en2
+437385usb UWE-3
 437345usb MO-72/ZACube1
 437397usb Firebird U1
 437405usb POPSAT-HIP1
 437425usb PhoneSat/UniSat-6
-437445usb LO-74/BugSat1
+437445usb LO-74&BugSat1
 437465usb CO-58
 437485usb CO-66/Goliat/ChubuSat-1
-437505usb MO-76/SwissCube-1/ESTCube-1/Shin’en2
+437505usb MO-76/SwissCube-1/ESTCube-1
 437525usb Sprout
 437550usb LO-78/ISS Simplex
 437600usb AENEAS
 437767usb PolyITAN
-143050usb Graves Radar
-143750fm Illegal Air use
-143775fm Illegal Air use
-143800fm Illegal Air use
-143825fm Illegal Air use
-143850fm Illegal Air use
-143875fm Illegal Air use
-143900fm Illegal Air use
-143925fm Illegal Air use
-143950fm Illegal Air use
 144050usb CW Calling
 144137usb PSK31 calling
 144140usb ~JT65~
@@ -220,13 +207,3 @@
 145970usb AO-7
 145975usb A0-73 Transponder
 145980usb DUCHIFAT/TISat1
-146500fm Wideband digital modes
-146900fmn Narrow Digital
-146912.5fmn Narrow Digital
-146925fmn Narrow Digital
-146937.5fmn Narrow Digital
-146950fmn Narrow Digital
-146962.50fmn Narrow Digital
-146975fmn Narrow Digital
-146987.5fmn Narrow Digital
-
