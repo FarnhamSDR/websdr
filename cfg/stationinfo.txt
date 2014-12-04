@@ -102,6 +102,7 @@
 437505usb MO-76/SwissCube-1/ESTCube-1
 437525usb Sprout
 437550usb LO-78/ISS Simplex
+437575fm Antelsat
 437600usb AENEAS
 437767usb PolyITAN
 144050usb CW Calling
