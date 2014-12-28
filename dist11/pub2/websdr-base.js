@@ -1604,7 +1604,7 @@ var allowkeyboard;
 
 function keydown(e)
 {
-   if (!document.viewform.allowkeys.checked) return true;
+   if (!document.keysform.allowkeys.checked) return true;
    e = e ? e : window.event;
    if (!e.target) e.target = e.srcElement;
    if (e.target.nodeName=="INPUT" && e.target.type=="text" && e.target.name!="frequency") return true;  // don't intercept keys when typing in one of the text fields, except the frequency field
