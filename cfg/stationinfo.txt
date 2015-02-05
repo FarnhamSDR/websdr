@@ -87,9 +87,9 @@
 437000fm Digital ATV
 437025usb Chasqui-1
 437100usb NO-45
-437230usb Firebird U2/SpinSat
+437230usb Firebird U2 & FU4/SpinSat
 437250usb Prism/AISat/ESTCube-1/TSUBAME
-437270usb IPEX/Shin’en2
+437270usb Exocube/IPEX/Shin’en2
 437275usb Cute-1.7
 437280usb Antelsat
 437303usb OREOS
@@ -99,16 +99,17 @@
 437385usb UWE-3/Shin’en2
 437345usb MO-72/ZACube1
 437397usb Firebird U1
-437405usb POPSAT-HIP1
+437405usb Firebird-II FU3/POPSAT-HIP1
 437425usb PhoneSat/UniSat-6
 437445usb LO-74/BugSat1
 437465usb CO-58
-437485usb CO-66/Goliat/ChubuSat-1
+437485usb Grifex/CO-66/Goliat/ChubuSat-1
 437505usb MO-76/SwissCube-1/ESTCube-1/Shin’en2
 437525usb Sprout
+437538usb Fajr
 437550usb LO-78/ISS Simplex
 437575fm Antelsat
-437600usb AENEAS
+437600usb AESP-14/AENEAS
 437767usb PolyITAN
 143050usb Graves Radar
 143625fm ISS Russian A-G link
