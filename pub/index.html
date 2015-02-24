@@ -33,25 +33,6 @@
         line-height: 1em;
     }
 </style>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-33341441-2', 'suws.org.uk');
-    ga('send', 'pageview');
-    setInterval(function() {
-        if(band==0) {
-            ga('send', 'event', 'listenband', '3cm');
-        } else if(band==1) {
-            ga('send', 'event', 'listenband', '23cm');
-        } else if(band==2) {
-            ga('send', 'event', 'listenband', '70cm');
-        } else if(band==3) {
-            ga('send', 'event', 'listenband', '2m');
-        }
-    },60*1000);
-</script>
 </head>
 <body onload=bodyonload()>
 <div id="topbar">
@@ -83,9 +64,57 @@
 <ul><li><b>144 MHz - 146 MHz</b> - 2m Band - Amateur radio narrow band modes, FM repeaters & simplex activity, satellites and the International Space Station</li>
 </ul></li>
 </ul>
+<b>Upcoming ISS Passes:</b><br>
+<ul>
+<li><span id="iss-passes">Loading..</span></li>
+</ul>
 <br>
 There are currently <span id=numusers2>?</span> Users on this WebSDR. The software used for this WebSDR is kindly provided by the <a href="http://www.websdr.org">WebSDR Project</a>
 <br>
 <!--#include file="websdr-controls.html"-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-33341441-2', 'suws.org.uk');
+ga('send', 'pageview');
+
+// ISS Passes
+load_iss_passes();
+setInterval(load_iss_passes,5*60*1000);
+function load_iss_passes() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://www.philcrump.co.uk/sats/api/passes?sat=ISS%20(ZARYA)&lat=51.23&lon=-0.82&days=1', true);
+    request.onreadystatechange = function() {
+        if (this.readyState === 4) {
+            if (this.status >= 200 && this.status < 400) {
+                var data = JSON.parse(this.responseText);
+                var dataLength = data.length;
+                var htmlString="";
+                for(var i=0;i<dataLength; i++)
+                {
+                    if(i!=0) htmlString+=", ";
+                    aos_date = new Date(data[i].aostime);
+                    los_date = new Date(data[i].lostime);
+                    htmlString+="<b>"+timeString(aos_date)+" - "+timeString(los_date)+"</b> UTC";
+                }
+                document.getElementById("iss-passes").innerHTML = htmlString;
+            } else {
+                document.getElementById("iss-passes").innerHTML = "Error: Data could not be loaded";
+            }
+        }
+    };
+    request.send();
+    request = null;
+}
+function timeString(date_obj) {
+    var hours = date_obj.getUTCHours();
+    if(hours<10) hours = "0"+hours;
+    var minutes = date_obj.getUTCMinutes();
+    if(minutes<10) minutes = "0"+minutes;
+    return hours+":"+minutes;
+}
+</script>
 </body>
 </html>
