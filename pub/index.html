@@ -32,6 +32,10 @@
         background-size: 100% 2em;
         line-height: 1em;
     }
+    .pseudo-link {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body onload=bodyonload()>
@@ -64,9 +68,15 @@
 <ul><li><b>144 MHz - 146 MHz</b> - 2m Band - Amateur radio narrow band modes, FM repeaters & simplex activity, satellites and the International Space Station</li>
 </ul></li>
 </ul>
-<b>Upcoming ISS Passes:</b><br>
+<b>Upcoming Satellite Passes:</b> (updated automatically every 5 minutes, click name to tune)<br>
 <ul>
+<li><span class="pseudo-link" onclick="setfreqm(b,145800,'fm'); wfset(2);">ISS</span><ul>
 <li><span id="iss-passes">Loading..</span></li>
+</ul></li>
+<br>
+<li><span class="pseudo-link" onclick="setfreqm(b,145935,'usb'); wfset(2);">Funcube</span><ul>
+<li><span id="funcube-passes">Loading..</span></li>
+</ul></li>
 </ul>
 <br>
 There are currently <span id=numusers2>?</span> Users on this WebSDR. The software used for this WebSDR is kindly provided by the <a href="http://www.websdr.org">WebSDR Project</a>
@@ -81,11 +91,15 @@ ga('create', 'UA-33341441-2', 'suws.org.uk');
 ga('send', 'pageview');
 
 // ISS Passes
-load_iss_passes();
-setInterval(load_iss_passes,5*60*1000);
-function load_iss_passes() {
+load_sats_passes();
+setInterval(load_sats_passes,5*60*1000);
+function load_sats_passes() {
+    load_sat_passes('ISS%20(ZARYA)','iss-passes');
+    load_sat_passes('FUNCUBE-1%20(AO-73)','funcube-passes');
+}
+function load_sat_passes(sat_name,span_id) {
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://www.philcrump.co.uk/sats/api/passes?sat=ISS%20(ZARYA)&lat=51.23&lon=-0.82&days=1', true);
+    request.open('GET', 'https://www.philcrump.co.uk/sats/api/passes?sat='+sat_name+'&lat=51.23&lon=-0.82&days=1', true);
     request.onreadystatechange = function() {
         if (this.readyState === 4) {
             if (this.status >= 200 && this.status < 400) {
@@ -99,9 +113,9 @@ function load_iss_passes() {
                     los_date = new Date(data[i].lostime);
                     htmlString+="<b>"+timeString(aos_date)+" - "+timeString(los_date)+"</b> UTC";
                 }
-                document.getElementById("iss-passes").innerHTML = htmlString;
+                document.getElementById(span_id).innerHTML = htmlString;
             } else {
-                document.getElementById("iss-passes").innerHTML = "Error: Data could not be loaded";
+                document.getElementById(span_id).innerHTML = "Error: Data could not be loaded";
             }
         }
     };
