@@ -153,7 +153,7 @@ function load_sat_position(sat_name,span_id) {
             if (this.status >= 200 && this.status < 400) {
                 var data = JSON.parse(this.responseText);
                 var elClass = 'class="not-visible"';
-                if(data.el>5) {
+                if(data.el>10) {
                     elClass = 'class="shouldbe-visible"';
                 } else if(data.el>0) {
                     elClass = 'class="maybe-visible"';
