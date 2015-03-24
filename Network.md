@@ -5,16 +5,16 @@ WebSDR Network Setup
 
 * 192.168.100.1 - WR1043ND
 * 192.168.100.100 - WebSDR
-..* port 80 (http)
+  * port 80 (http)
 * 192.168.100.101 - HVPi
-..* port 123 (ntp)
+  * port 123 (ntp)
 * 192.168.100.201 - HVPC
-..* port 4001
-..* port 5925
+  * port 4001
+  * port 5925
 * 192.168.100.202 - Netiom
-..* port 81
+  * port 81
 * 192.168.100.203 - PowerBlock (static)
-..* port 80
+  * port 80
 
 ## Switch Ports
 
