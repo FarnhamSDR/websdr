@@ -111,7 +111,7 @@
 437575fm Antelsat
 437600usb AESP-14/AENEAS
 437767usb PolyITAN
-143050usb Graves Radar
+143049usb Graves Radar - Meteor Pings
 143625fm ISS Russian A-G link
 143750fm Illegal Air use
 143775fm Illegal Air use
