@@ -112,7 +112,8 @@
 437600usb AESP-14/AENEAS
 437767usb PolyITAN
 143049usb Graves Radar - Meteor Pings
-143625fm ISS Russian A-G link
+143350amn French Air Traffic Control
+143625fm VHF-2 Russian downlink from ISS
 143750fm Illegal Air use
 143775fm Illegal Air use
 143800fm Illegal Air use
