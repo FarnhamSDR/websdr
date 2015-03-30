@@ -111,7 +111,7 @@
 437575fm Antelsat
 437600usb AESP-14/AENEAS
 437767usb PolyITAN
-143049usbn Graves Radar - Meteor Pings
+143049usb Graves Radar - Meteor Pings
 143350amn French Air Traffic Control
 143625fm VHF-2 Russian downlink from ISS
 143750fm Illegal Air use
