@@ -114,7 +114,7 @@
 143049usb Graves Radar - Meteor Pings
 143350amn Belgian Air to Air
 143375amn Belgian Air to Air
-143350amn German Air to Ground
+143400amn German Air to Ground
 143600amn Belgian Air to Air
 143625fm VHF-2 Russian downlink from ISS
 143750fm Illegal Air use
