@@ -127,6 +127,10 @@ function load_sat_passes(sat_name,span_id) {
                     los_date = new Date(data[i].lostime);
                     htmlString+="<b>"+timeString(aos_date)+" - "+timeString(los_date)+"</b> UTC";
                 }
+                if(dataLength==0)
+		{
+		    htmlString="No passes in the next 24 hours."
+		}
                 document.getElementById(span_id).innerHTML = htmlString;
             } else {
                 document.getElementById(span_id).innerHTML = "Error: Data could not be loaded";
