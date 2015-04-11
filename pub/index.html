@@ -104,6 +104,7 @@ There are currently <span id=numusers2>?</span> Users on this WebSDR. The softwa
 <br>
 <!--#include file="websdr-controls.html"-->
 <script>
+var sats_next_aos=[];
 // ISS Passes
 load_sats_passes();
 setInterval(load_sats_passes,5*60*1000);
@@ -112,6 +113,7 @@ function load_sats_passes() {
     load_sat_passes('FUNCUBE-1%20(AO-73)','funcube-passes');
 }
 function load_sat_passes(sat_name,span_id) {
+    sats_next_aos[sat_name]=[];
     var request = new XMLHttpRequest();
     request.open('GET', 'https://www.philcrump.co.uk/sats/api/passes?sat='+sat_name+'&lat=51.23&lon=-0.82&days=1', true);
     request.onreadystatechange = function() {
@@ -122,9 +124,13 @@ function load_sat_passes(sat_name,span_id) {
                 var htmlString="";
                 for(var i=0;i<dataLength; i++)
                 {
-                    if(i!=0) htmlString+=", ";
                     aos_date = new Date(data[i].aostime);
                     los_date = new Date(data[i].lostime);
+                    sats_next_aos[sat_name][i]=aos_date;
+                    if(i!=0)
+                    {
+                        htmlString+=", ";
+                    }
                     htmlString+="<b>"+timeString(aos_date)+" - "+timeString(los_date)+"</b> UTC";
                 }
                 if(dataLength==0)
@@ -163,6 +169,19 @@ function load_sat_position(sat_name,span_id) {
                 document.getElementById(span_id+"-az").innerHTML = "&nbsp;Azimuth: "+data.az+"°";
                 document.getElementById(span_id+"-el").innerHTML = "&nbsp;Elevation: <span "+elClass+">"+data.el+"°</span>";
                 document.getElementById(span_id+"-range").innerHTML = "&nbsp;Range: "+data.range+" km";
+                var aos_content="";
+                if(sats_next_aos[sat_name].length!=0)
+                {
+                    for(var i=0;i<sats_next_aos[sat_name].length;i++)
+                    {
+                        if(sats_next_aos[sat_name][i]>(new Date()))
+                        {
+                            aos_content = "&nbsp;Next AOS: "+intervalString(sats_next_aos[sat_name][i],(new Date));
+                            break;
+                        }
+                    }
+                }
+                document.getElementById(span_id+"-aos").innerHTML = aos_content;
             } else {
                 document.getElementById(span_id+"-name").innerHTML = "Error: Data could not be loaded";
             }
@@ -177,6 +196,43 @@ function timeString(date_obj) {
     var minutes = date_obj.getUTCMinutes();
     if(minutes<10) minutes = "0"+minutes;
     return hours+":"+minutes;
+}
+function intervalString(date_a, date_b) {
+    var ms_in_second = (1000);
+    var ms_in_minute = (60*1000);
+    var ms_in_hour = (60*60*1000);
+    var ms_difference = date_a - date_b;
+    var hours=0;
+    var minutes=0;
+    var seconds=0;
+    if(ms_difference>=ms_in_hour)
+    {
+        hours = Math.floor(ms_difference/ms_in_hour);
+        ms_difference-=hours*ms_in_hour;
+    }
+    if(ms_difference>=ms_in_minute)
+    {
+        minutes = Math.floor(ms_difference/ms_in_minute);
+        ms_difference-=minutes*ms_in_minute;
+    }
+    if(ms_difference>=ms_in_second)
+    {
+        seconds = Math.floor(ms_difference/ms_in_second);
+    }
+    var returnString="";
+    if(hours>0)
+    {
+        returnString = hours+"h "+minutes+"m "+seconds+"s";
+    }
+    else if(hours==0 && minutes>0)
+    {
+        returnString = minutes+"m "+seconds+"s";
+    }
+    else if(hours==0 && minutes==0 && seconds>0)
+    {
+        returnString = seconds+"s";
+    }
+    return returnString;
 }
 </script>
 <img src="https://www.philcrump.co.uk/a.gif" style="display:none">
