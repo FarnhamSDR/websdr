@@ -5,5 +5,10 @@
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>http://websdr.suws.org.uk/m.html</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
 </urlset> 
 
