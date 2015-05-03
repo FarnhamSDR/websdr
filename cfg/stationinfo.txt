@@ -284,6 +284,7 @@
 198.00am BBC R4
 234.0am RTL Radio
 252.0am RTE Radio 1
+327.63cw BLK NDB
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
