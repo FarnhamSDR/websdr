@@ -9,26 +9,28 @@ Documentation URL: http://www.suws.org.uk/WebSDR
 
 ## WebSDR Config Files
 
-### WebSDR Configuration File
+### WebSDR Daemon Configuration File
 
 * cfg/websdr.cfg
 
-### Waterfall Marker Flags
+### WebSDR Waterfall Marker Flags
 
 * cfg/stationinfo.txt
 
 ### WebSDR Main Web Page
 
 * pub/index.html
+* dist11/pub2/websdr-controls.html
 
-## Upstart Configs
+## Upstart System Service Config Files
 
 * websdr.conf
+* rtltcp_dc.conf
 * rtltcp_144.conf
+* rtltcp_146.conf
 * rtltcp_432.conf
 * rtltcp_435.conf
 * rtltcp_437.conf
-* rtltcp_1296.conf
 * rtltcp_10ghz.conf
 
 ## License
@@ -37,4 +39,4 @@ All original and un-attributed work in this repository is licensed as:
 
 Creative Commons Attribution NonCommercial ShareAlike http://creativecommons.org/licenses/by-nc-sa/4.0/
 
-Copyright(C) 2014 Phil Crump phildcrump@gmail.com
+Copyright(C) 2014 Phil Crump <phil@philcrump.co.uk>
