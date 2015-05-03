@@ -255,8 +255,10 @@
 16.4cw JXN
 18.3cw HWU
 19.6cw GQD
+20.3cw ICV
 20.9cw HWU
 22.1cw GQD
+22.6cw HWU
 23.4cw DOH38
 24.0cw NAA
 26.7cw TBB
@@ -275,6 +277,7 @@
 135.7cw Amateur Band{
 136.0usb WSPR
 137.8cw Amateur Band }
+139.0cw DCF39
 147.3cw DDH47
 198.00am BBC R4
 472.00cw Amateur Band {
