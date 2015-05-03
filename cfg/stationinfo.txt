@@ -294,8 +294,5 @@
 1972lsb 1972
 1977am AM
 1990lsb NEWS
-
 1836.6usb WSPR
 2000cw 160m Amateur Band }
-
-
