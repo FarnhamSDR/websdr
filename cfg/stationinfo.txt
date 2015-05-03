@@ -284,7 +284,19 @@
 198.00am BBC R4
 234.0am RTL Radio
 252.0am RTE Radio 1
+277.0cw CHT NDB
+291.0cw Wormleighton IALA DGPS
+307.5cw St Catherine's IALA DGPS
+309.5cw Nash Point IALA DGPS
+316.0cw EPM NDB
 327.63cw BLK NDB
+332.0cw SHM NDB
+335.0cw WCO NDB
+362.5cw SND NDB
+367.5cw OX NDB
+391.5cw EAS NDB
+421.0cw BUR NDB
+414.0cw BRI NDB
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
