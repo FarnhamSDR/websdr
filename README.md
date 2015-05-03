@@ -5,7 +5,7 @@ Configuration and setup files for the WebSDR (note the websdr binaries must NOT 
 
 Websdr URL: http://websdr.suws.org.uk/
 
-Documentation URL: http://www.suws.org.uk/WebSDR
+Documentation URL: http://www.suws.org.uk/wp/suws-websdr/
 
 ## WebSDR Config Files
 
