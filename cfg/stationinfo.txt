@@ -279,10 +279,43 @@
 137.8cw Amateur Band }
 139.0cw DCF39
 147.3cw DDH47
+162.0am France Inter
+183.0am Europe 1
 198.00am BBC R4
+234.0am RTL Radio
+252.0am RTE Radio 1
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
+558.0am Spectrum Radio London
+693.0am BBC Radio 5 Live
+828.0am Smooth Radio UK
+864.0am France Bleu
+882.0am Radio Wales
+909.0am BBC Radio 5 Live 
+972.0am Sunrise Radio London
+999.0am BBC Radio Solent
+1035.0am Radio 1035 London
+1053.0am Talk Sport UK
+1089.0am Talk Sport UK
+1107.0am Talk Sport UK
+1134.0am BFBS Gurkha Radio Sandhurst UK ?
+1152.0am LBC News London
+1215.0am Absolute Radio UK
+1233.0am Absolute Radio UK
+1260.0am Absolute Radio UK
+1395.0am Radio Tirana
+1413.0am Premier Radio London
+1431.0am Smooth Radio Reading UK
+1440.0am RTL/ China Radio International
+1458.0am Radio 1458 London
+1485.0am Smooth Radio Berks UK
+1494.0am France Info
+1548.0am Gold London
+1557.0am France Info
+1566.0am Premier Radio Surrey UK
+1575.0am RAI Radiouno
+1602.0am Desi Radio London
 1810cw 160m Amateur Band {
 1830cw 1830
 1843lsb DX
