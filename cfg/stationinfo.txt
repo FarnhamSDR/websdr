@@ -252,7 +252,33 @@
 146962.50fmn Narrow Digital
 146975fmn Narrow Digital
 146987.5fmn Narrow Digital
-16.2cw JXN
-19.4cw GQD
-20.7cw HWU
+16.4cw JXN
+18.3cw HWU
+19.6cw GQD
+20.9cw HWU
+22.1cw GQD
+23.4cw DOH38
+24.0cw NAA
+26.7cw TBB
+37.5cw TFK
+45.9cw NSY
+50.0cw RTZ
+52.0cw GNY1
+57.4cw GXH
+60.0cw MSF
+62.6cw FUG
+77.5cw DCF77
+81.0cw GYN2
+100.0am LORAN
+129.1cw DCF49
+135.6cw HGA22
+135.7cw Amateur{
+136.0usb WSPR
+137.8cw amateur }
+147.3cw DDH47
+198.00am BBC R4
+472.00cw Amateur {
+474.2usb WSPR
+479.0cw Amateur }
+
 
