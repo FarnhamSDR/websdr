@@ -281,6 +281,20 @@
 474.2usb WSPR
 479.0cw Amateur Band}
 1810cw 160m Amateur Band {
+1830cw 1830
+1843lsb DX
+1850lsb 1850
+1875lsb 1875
+1890lsb 1890
+1933lsb 1933
+1942lsb 1942
+1949lsb 1949
+1963lsb ROTA / AM
+1970lsb 1970
+1972lsb 1972
+1977am AM
+1990lsb NEWS
+
 1836.6usb WSPR
 2000cw 160m Amateur Band }
 
