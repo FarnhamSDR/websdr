@@ -272,13 +272,16 @@
 100.0am LORAN
 129.1cw DCF49
 135.6cw HGA22
-135.7cw Amateur{
+135.7cw Amateur Band{
 136.0usb WSPR
-137.8cw amateur }
+137.8cw Amateur Band }
 147.3cw DDH47
 198.00am BBC R4
-472.00cw Amateur {
+472.00cw Amateur Band {
 474.2usb WSPR
-479.0cw Amateur }
+479.0cw Amateur Band}
+1810cw 160m Amateur Band {
+1836.6usb WSPR
+2000cw 160m Amateur Band }
 
 
