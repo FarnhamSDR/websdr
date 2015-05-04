@@ -306,7 +306,7 @@
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
-516.0usb NAVTEX
+517.0usb NAVTEX
 558.0am Spectrum Radio London
 693.0am BBC Radio 5 Live
 828.0am Smooth Radio UK
