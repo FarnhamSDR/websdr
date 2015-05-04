@@ -345,16 +345,20 @@
 1722.0fm CT0 Handset Ch5
 1730.0fm US Handset Ch3
 1742.0fm CT0 Handset Ch6
+1743usb Butt of Lewis Coastguard
 1750.0fm US Handset Ch4
 1762.0fm CT0 Handset Ch7
-1770.0fm US Handset Ch5
+1770.0usb Collafirth Coastguard
 1782.0fm CT0 Handset Ch8
 1810cw 160m Amateur Band {
 1830cw 1830
 1843lsb DX
 1850lsb 1850
 1875lsb 1875
+1880usb Scillies Coastguard
+1883usb Tiree Coastguard
 1890lsb 1890
+1925usb Cullercoats Coastguard
 1933lsb 1933
 1942lsb 1942
 1949lsb 1949
