@@ -306,6 +306,7 @@
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
+516.0usb NAVTEX
 558.0am Spectrum Radio London
 693.0am BBC Radio 5 Live
 828.0am Smooth Radio UK
@@ -335,6 +336,19 @@
 1566.0am Premier Radio Surrey UK
 1575.0am RAI Radiouno
 1602.0am Desi Radio London
+1642.0fm CT0 Handset Ch1
+1662.0fm CT0 Handset Ch2
+1682.0fm CT0 Handset Ch3
+1690.0fm US Handset Ch1
+1702.0fm CT0 Handset Ch4
+1710.0fm US Handset Ch2
+1722.0fm CT0 Handset Ch5
+1730.0fm US Handset Ch3
+1742.0fm CT0 Handset Ch6
+1750.0fm US Handset Ch4
+1762.0fm CT0 Handset Ch7
+1770.0fm US Handset Ch5
+1782.0fm CT0 Handset Ch8
 1810cw 160m Amateur Band {
 1830cw 1830
 1843lsb DX
