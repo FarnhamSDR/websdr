@@ -380,6 +380,7 @@
 1395.0am Radio Tirana
 1404.0am France Info
 1413.0am Premier Radio London
+1422.0am Deutschlandfunk
 1431.0am Smooth Radio Reading UK
 1440.0am RTL/ China Radio International
 1449.0am Asian Network
