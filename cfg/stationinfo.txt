@@ -307,7 +307,13 @@
 474.2usb WSPR
 479.0cw Amateur Band}
 517.0usb NAVTEX
+541.0am Onda Cero Catal
+549.0am Deutschlandfunk
 558.0am Spectrum Radio London
+576.0am RNE Radio 5
+585.0am RNE Radio 1
+603.0am France Info
+621.0am RTBF
 630.0am Three Counties Radio UK
 639.0am RNE Radio 1
 666.0am Radio Barcelona
@@ -319,6 +325,7 @@
 720.0am BBC Radio 4 UK
 729.0am RNE Radio 1
 738.0am RNE Radio 1
+747.0am NOS Radio 5
 756.0am Deutschlandfunk 
 765.0am BBC Radio Essex
 774.0am RNE Radio 1
