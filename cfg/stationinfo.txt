@@ -308,34 +308,93 @@
 479.0cw Amateur Band}
 517.0usb NAVTEX
 558.0am Spectrum Radio London
+630.0am Three Counties Radio UK
+639.0am RNE Radio 1
+666.0am Radio Barcelona
+675.0am Radio Maria
+684.0am RNE Radio 1 
 693.0am BBC Radio 5 Live
+702.0am Radio Devin
+711.0am France Info
+720.0am BBC Radio 4 UK
+729.0am RNE Radio 1
+738.0am RNE Radio 1
+756.0am Deutschlandfunk 
+765.0am BBC Radio Essex
+774.0am RNE Radio 1
+792.0am Radio Sevilla 
+801.0am Bayern Plus
+810.0am BBC Radio Scotland
 828.0am Smooth Radio UK
+837.0am Asian Network UK
+855.0am RNE Radio 1
 864.0am France Bleu
+873.0am Radio Zaragoza
 882.0am Radio Wales
-909.0am BBC Radio 5 Live 
+891.0am ENRS
+900.0am RAI Radiouno
+909.0am BBC Radio 5 Live
+918.0am Radio Slovenija 1
+936.0am RNE Radio 5
+945.0am Smooth Radio UK
+954.0am Onda Cero Radio
 972.0am Sunrise Radio London
+981.0am ENRS
+990.0am Radio Bilbao
 999.0am BBC Radio Solent
+1008.0am Groot Nieuws Radio
+1017.0am Free Radio 80s
+1026.0am BBC Radio Cambridgeshire
 1035.0am Radio 1035 London
 1053.0am Talk Sport UK
+1071.0am Talk Sport UK
 1089.0am Talk Sport UK
+1098.0am Radio Devin
 1107.0am Talk Sport UK
+1125.0am Vivacité
 1134.0am BFBS Gurkha Radio Sandhurst UK ?
 1152.0am LBC News London
+1161.0am BBC Radio Sussex
+1170.0am Smooth Radio UK
+1179.0am Radio BGWS
+1197.0am Absolute Radio UK
+1206.0am France Info
 1215.0am Absolute Radio UK
 1233.0am Absolute Radio UK
+1242.0am France Info
+1251.0am Smooth Radio UK
 1260.0am Absolute Radio UK
+1269.0am Deutschlandfunk
+1278.0am France Bleu
+1278.0am Misc RSL UK
+1296.0am Radio XL UK
+1305.0am Premier Radio UK
+1323.0am Smooth Radio UK
+1332.0am Premier Radio London
+1341.0am Radio Ulster
+1350.0am Misc RSL UK
+1359.0am Smooth Radio UK
+1368.0am BBC Radio Surrey
+1377.0am France Info
+1386.0am Misc RSL UK
 1395.0am Radio Tirana
+1404.0am France Info
 1413.0am Premier Radio London
 1431.0am Smooth Radio Reading UK
 1440.0am RTL/ China Radio International
+1449.0am Asian Network
 1458.0am Radio 1458 London
+1467.0am Transworld Radio
 1485.0am Smooth Radio Berks UK
 1494.0am France Info
+1503.0am Betar Bangla London
+1530.0am BBC Radio Essex
 1548.0am Gold London
 1557.0am France Info
 1566.0am Premier Radio Surrey UK
 1575.0am RAI Radiouno
-1602.0am Desi Radio London
+1584.0am Panjab Radio London
+1602.0am BBC Radio Kent
 1642.0fm CT0 Handset Ch1
 1662.0fm CT0 Handset Ch2
 1682.0fm CT0 Handset Ch3
