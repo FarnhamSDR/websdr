@@ -316,7 +316,8 @@
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
-517.0usb NAVTEX
+490.0cw NAVTEX National
+518.0cw NAVTEX International
 541.0am Onda Cero Catal
 549.0am Deutschlandfunk
 558.0am Spectrum Radio London
