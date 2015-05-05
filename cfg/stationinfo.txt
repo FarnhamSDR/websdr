@@ -289,20 +289,30 @@
 307.5cw St Catherine's IALA DGPS
 309.5cw Nash Point IALA DGPS
 316.0am-nrw EPM NDB
+322.0am-nrw LCY NDB
 328.0am-nrw BLK NDB
-331.0usb SHM NDB
-334.0usb WCO NDB
-338.0usb BIA NDB
-346.0usb LHO NDB
-347.0usb FOS NDB
-351.0usb WOD NDB
-361.5usb SND NDB
-366.5usb OX NDB
-382.0usb ALD NDB
-385.0usb BZ NDB
-390.5usb EAS NDB
-420.0usb BUR NDB
-413.0usb BRI NDB
+331.0am-nrw GST NDB
+332.0am-nrw SHM NDB
+332.5am-nrw CAM NDB
+335.0am-nrw WCO NDB
+339.0am-nrw BIA NDB
+340.0am-nrw LSH NDB
+343.0am-nrw YVL NDB
+345.0am-nrw LUT NDB
+347.0am-nrw LHO NDB
+348.0am-nrw FOS NDB
+352.0am-nrw WOD NDB
+362.5am-nrw SND NDB
+367.5am-nrw OX NDB
+383.0am-nrw ALD NDB
+383.5am-nrw LE NDB
+386.0am-nrw BZ NDB
+391.5am-nrw EAS NDB
+397.0am-nrw LZD NDB
+406.0am-nrw BHX NDB
+414.0am-nrw BRI NDB
+421.0am-nrw BUR NDB
+433.5am-nrw HEN NDB
 472.00cw Amateur Band {
 474.2usb WSPR
 479.0cw Amateur Band}
@@ -334,6 +344,7 @@
 810.0am BBC Radio Scotland
 828.0am Smooth Radio UK
 837.0am Asian Network UK
+850.0am-nrw CIT NDB
 855.0am RNE Radio 1
 864.0am France Bleu
 873.0am Radio Zaragoza
