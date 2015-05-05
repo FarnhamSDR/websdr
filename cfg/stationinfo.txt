@@ -356,6 +356,7 @@
 936.0am RNE Radio 5
 945.0am Smooth Radio UK
 954.0am Onda Cero Radio
+963.0am Sunrise Radio London
 972.0am Sunrise Radio London
 981.0am ENRS
 990.0am Radio Bilbao
@@ -383,8 +384,7 @@
 1251.0am Smooth Radio UK
 1260.0am Absolute Radio UK
 1269.0am Deutschlandfunk
-1278.0am France Bleu
-1278.0am Misc RSL UK
+1278.0am France Bleu & Misc RSL UK
 1296.0am Radio XL UK
 1305.0am Premier Radio UK
 1323.0am Smooth Radio UK
