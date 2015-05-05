@@ -284,7 +284,7 @@
 198.00am BBC R4
 234.0am RTL Radio
 252.0am RTE Radio 1
-277.0am-nrw CHT NDB
+277.0amn CHT NDB
 291.0cw Wormleighton IALA DGPS
 307.5cw St Catherine's IALA DGPS
 309.5cw Nash Point IALA DGPS
