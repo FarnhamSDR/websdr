@@ -246,7 +246,14 @@ function intervalString(date_a, date_b) {
     }
     return returnString;
 }
+function ping() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://www.philcrump.co.uk/a.gif?f='+f+'&m='+mode, true);
+    request.send();
+    request = null ;
+}
+setInterval(ping,10000);
 </script>
-<img src="https://www.philcrump.co.uk/a.gif" style="display:none">
+<img name="dummy" src="https://www.philcrump.co.uk/a.gif" style="display:none">
 </body>
 </html>
