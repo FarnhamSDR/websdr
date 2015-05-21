@@ -102,6 +102,7 @@
 437397usb Firebird U1
 437405usb Firebird-II FU3/POPSAT-HIP1
 437425usb PhoneSat/UniSat-6
+437435usb LightSail-1
 437445usb LO-74/BugSat1
 437465usb CO-58
 437485usb Grifex/CO-66/Goliat/ChubuSat-1
