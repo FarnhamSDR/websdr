@@ -72,6 +72,7 @@
 435000usb TigriSat
 435225usb DX-1
 435315usb RS-30
+435350usb PSAT/BRICsat
 435352usb RS-22
 435465usb RS-46
 435565usb RS-46
@@ -113,6 +114,7 @@
 437575fm Antelsat
 437600usb AESP-14/AENEAS
 437767usb PolyITAN
+437975usb USS Langley
 143049usb Graves Radar - Meteor Pings
 143350amn Belgian Air to Air
 143375amn Belgian Air to Air
