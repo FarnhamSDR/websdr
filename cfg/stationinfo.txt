@@ -418,28 +418,55 @@
 1575.0am RAI Radiouno
 1584.0am Panjab Radio London
 1602.0am BBC Radio Kent
+1635.0usb Vardo(LGV)Marine
+1638.0usb Turku(OFK)Marine
 1642.0fm CT0 Handset Ch1
+1650.0usb (CROSS)Marine
+1656.0usb Chipiona Marine
+1659.0usb Bodo(LGP)Marine
 1662.0fm CT0 Handset Ch2
+1665.0usb Tjome(LGT)Marine
+1677.0usb Turku(OFK)& Malin Head(EJM)Marine
+1680.0usb Floro(LGL)Marine
 1682.0fm CT0 Handset Ch3
+1689.0usb Las Palmas Marine
 1690.0fm US Handset Ch1
+1692.0usb Rogaland (LGQ)Marine
+1695.0usb Vardo(LGV)Marine
+1696.0usb La Garde(CROSS)Marine
+1698.0usb Coruna Marine
 1702.0fm CT0 Handset Ch4
-1710.0fm US Handset Ch2
+1704.0usb Tarifa Marine
+1710.0usb Bodo(LGP)Marine
+1711.0fm US Handset Ch2
+1713.0usb Vardo(LGV)Marine
+1719.0usb Turku(OFK)Marine
 1722.0fm CT0 Handset Ch5
 1730.0fm US Handset Ch3
+1731.0usb Svalbard(LGS)Marine
 1742.0fm CT0 Handset Ch6
-1743usb Butt of Lewis Coastguard
+1743.0usb Butt of Lewis Coastguard
 1750.0fm US Handset Ch4
+1752.0usb Valentia(EJK)Marine
 1762.0fm CT0 Handset Ch7
-1770.0usb Collafirth Coastguard
-1782.0fm CT0 Handset Ch8
+1764.0usb Finisterre Marine
+1770.0usb Collafirth & Bodo Coastguard
+1782.0usb Orlandet(LFO)Marine
+1783.0fm CT0 Handset Ch8
+1785.0usb Farsund(LGZ)Marine
 1810cw 160m Amateur Band {
 1830cw 1830
 1843lsb DX
 1850lsb 1850
-1875lsb 1875
-1880usb Scillies Coastguard
+1852.0usb Palermo(IPP)Marine
+1855.0usb San Benedetto del Tronto(IQP)Marine
+1875.0lsb 1875
+1876.0usb Lampedusa(IQN)Marine
+1880.0usb Scillies Coastguard
 1883usb Tiree Coastguard
+1888.0usb Civitavecchia(IPD)Marine
 1890lsb 1890
+1911.0usb Agadir(CND)Marine
 1925usb Cullercoats Coastguard
 1933lsb 1933
 1942lsb 1942
