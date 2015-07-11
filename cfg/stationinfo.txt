@@ -244,6 +244,7 @@
 145940usb QB50p1 Transponder
 145955usb AO-7 Transponder
 145970usb AO-7
+145974usb DeorbitSail
 145960usb AO-73 Transponder
 145980usb DUCHIFAT/TISat1
 146500fm Wideband digital modes
