@@ -61,6 +61,8 @@ class Ups:
         return json.dumps(self.dict())
 
     def refresh(self):
+        self.__getUPSinfo('Y')
+        self.upsName = self.__getUPSinfo('\x01')
         try:
             self.__getUPSinfo('Y')
             self.upsName = self.__getUPSinfo('\x01')
