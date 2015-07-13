@@ -77,7 +77,7 @@ class Ups:
             if self.batteryNominal==24.0:
                 self.batteryVoltage = float(self.__getUPSinfo('B'))/2
             else:
-                self.batteryVoltage = float(self.__getUPSinfo('B'))/2
+                self.batteryVoltage = float(self.__getUPSinfo('B'))
             self.batteryPercent = float(self.__getUPSinfo('f'))
         except:
             return False
