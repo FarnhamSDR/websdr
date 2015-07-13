@@ -44,7 +44,8 @@ class Ups:
         _dict['upsBoost'] = self.upsBoost
 
         _dict['batteryVoltage'] = self.batteryVoltage
-        _dict['batteryNominal'] = self.batteryPercent
+        _dict['batteryPercent'] = self.batteryPercent
+        _dict['batteryNominal'] = self.batteryNominal
         _dict['batteryHealthy'] = self.batteryHealthy
         _dict['batteryLow'] = self.batteryLow
 
