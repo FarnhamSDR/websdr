@@ -89,7 +89,6 @@ class Ups:
             self.loadVoltage = float(self.__getUPSinfo('O'))
         except:
             return 0
-        else:
 
         try:
             statusBits = int(self.__getUPSinfo('Q'), 16)
