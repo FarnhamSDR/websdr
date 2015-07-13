@@ -32,7 +32,7 @@ class Ups:
         except:
             return None
 
-    def dict():
+    def dict(self):
         _dict = {}
         _dict['upsName'] = self.upsName
         _dict['upsCalibrating'] = self.upsCalibrating
@@ -56,10 +56,10 @@ class Ups:
 
         return _dict
 
-    def json():
+    def json(self):
         return json.dumps(self.dict())
 
-    def refresh():
+    def refresh(self):
         try:
             self.__getUPSinfo('Y')
             self.upsName = self.__getUPSinfo('\x01')
@@ -129,7 +129,7 @@ class Ups:
         except:
             return 0
 
-    def __openSerialPort():
+    def __openSerialPort(self):
         self._fd = open(serialPort, 'r+', 0)
         #### Set the serial line to 2400 8n1
         #first, get the structure, so as to inherit the tty special characters
@@ -150,7 +150,7 @@ class Ups:
         termios.tcsetattr(self._fd, termios.TCSANOW, serPortAttribs)
 
 
-    def __getUPSinfo(sendChar):
+    def __getUPSinfo(self,sendChar):
         #       time.sleep(0.01)
         try:
             self._fd.write(sendChar)
