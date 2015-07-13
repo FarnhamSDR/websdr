@@ -11,10 +11,10 @@ from Ups import Ups
 
 while(1):
     ups = Ups(serialPort)
-    if(!ups):
+    if not ups:
         print("Opening Serial Port failed!")
         exit()
-    while(!ups.refresh()):
+    while not ups.refresh():
         print("UPS Poll failed, sleeping..")
         sleep(5)
     print(ups.json())
