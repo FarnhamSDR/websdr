@@ -1,8 +1,9 @@
-import sys
 import termios
 #import time
 import copy
 import json
+
+import sys
 
 class Ups:
     upsName = 'Unknown';
@@ -64,6 +65,7 @@ class Ups:
             self.__getUPSinfo('Y')
             self.upsName = self.__getUPSinfo('\x01')
         except:
+            print "Unexpected error:", sys.exc_info()[0]
             return False
 
         try:
@@ -74,12 +76,14 @@ class Ups:
                 self.batteryVoltage = float(self.__getUPSinfo('B'))/2
             self.batteryPercent = float(self.__getUPSinfo('f'))
         except:
+            print "Unexpected error:", sys.exc_info()[0]
             return False
 
         try:
             self.loadPercent = float(self.__getUPSinfo('P'))
             self.loadRuntime = int(self.__getUPSinfo('j')[:-1])
         except:
+            print "Unexpected error:", sys.exc_info()[0]
             return False
 
         try:
@@ -88,6 +92,7 @@ class Ups:
             self.lineFrequency = float(self.__getUPSinfo('F'))
             self.loadVoltage = float(self.__getUPSinfo('O'))
         except:
+            print "Unexpected error:", sys.exc_info()[0]
             return False
 
         try:
@@ -127,6 +132,7 @@ class Ups:
             else:
                 self.batteryHealthy = True
         except:
+            print "Unexpected error:", sys.exc_info()[0]
             return False
         return True
 
