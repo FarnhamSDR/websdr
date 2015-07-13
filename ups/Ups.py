@@ -30,7 +30,7 @@ class Ups:
         try:
             self.__openSerialPort(serialPort)
         except:
-            return None
+            return False
 
     def dict(self):
         _dict = {}
@@ -64,7 +64,7 @@ class Ups:
             self.__getUPSinfo('Y')
             self.upsName = self.__getUPSinfo('\x01')
         except:
-            return 0
+            return False
 
         try:
             self.batteryNominal = float(self.__getUPSinfo('g'))
@@ -74,13 +74,13 @@ class Ups:
                 self.batteryVoltage = float(self.__getUPSinfo('B'))/2
             self.batteryPercent = float(self.__getUPSinfo('f'))
         except:
-            return 0
+            return False
 
         try:
             self.loadPercent = float(self.__getUPSinfo('P'))
             self.loadRuntime = int(self.__getUPSinfo('j')[:-1])
         except:
-            return 0
+            return False
 
         try:
             self.upsTemp = float(self.__getUPSinfo('C'))
@@ -88,7 +88,7 @@ class Ups:
             self.lineFrequency = float(self.__getUPSinfo('F'))
             self.loadVoltage = float(self.__getUPSinfo('O'))
         except:
-            return 0
+            return False
 
         try:
             statusBits = int(self.__getUPSinfo('Q'), 16)
@@ -127,7 +127,8 @@ class Ups:
             else:
                 self.batteryHealthy = True
         except:
-            return 0
+            return False
+        return True
 
     def __openSerialPort(self):
         self._fd = open(serialPort, 'r+', 0)
