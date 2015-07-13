@@ -143,7 +143,7 @@ class Ups:
         return True
 
     def __openSerialPort(self):
-        self._fd = open(serialPort, 'r+', 0)
+        self._fd = open(self.serialPort, 'r+', 0)
         #### Set the serial line to 2400 8n1
         #first, get the structure, so as to inherit the tty special characters
         serPortAttribs = termios.tcgetattr(fd)
