@@ -2,6 +2,7 @@ import termios
 #import time
 import copy
 import json
+import serial
 
 import sys
 
