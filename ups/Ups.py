@@ -7,6 +7,8 @@ import serial
 import sys
 
 class Ups:
+    serialPort = '/dev/ttyS0'
+
     upsName = 'Unknown';
     upsCalibrating = False;
     upsTemp = 0.0;
@@ -28,9 +30,9 @@ class Ups:
     lineFrequency = 0.0;
     lineOk = True;
 
-    def __init__(self, serialPort='/dev/ttyS0'):
+    def __init__(self, self.serialPort='/dev/ttyS0'):
         try:
-            self.__openSerialPort(serialPort)
+            self.__openSerialPort(self.serialPort)
         except:
             return
 
