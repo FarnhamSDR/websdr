@@ -30,7 +30,7 @@ class Ups:
         try:
             self.__openSerialPort(serialPort)
         except:
-            return False
+            return
 
     def dict(self):
         _dict = {}
