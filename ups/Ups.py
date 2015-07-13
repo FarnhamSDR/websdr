@@ -97,7 +97,7 @@ class Ups:
             else:
                 self.upsCalibrating = False
 
-                if statusBits & 0x02:
+            if statusBits & 0x02:
                 self.upsTrim = True
             else:
                 self.upsTrim = False
