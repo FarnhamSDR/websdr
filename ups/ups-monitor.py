@@ -2,7 +2,6 @@
 
 serialPort = '/dev/ttyS0'
 jsonPath = ''
-
 pollTime = 30
 
 from time import sleep
