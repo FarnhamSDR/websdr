@@ -21,10 +21,10 @@ class Ups:
     loadPercent = 0.0;
     loadRuntime = 0; # Minutes
     loadOk = True;
-    
+
     lineVoltage = 0.0;
     lineFrequency = 0.0;
-    lineOk = True;    
+    lineOk = True;
 
     def __init__(self, serialPort='/dev/ttyS0'):
         try:
@@ -39,96 +39,96 @@ class Ups:
         _dict['upsTemp'] = self.upsTemp
         _dict['upsTrim'] = self.upsTrim
         _dict['upsBoost'] = self.upsBoost
-        
+
         _dict['batteryVoltage'] = self.batteryVoltage
         _dict['batteryNominal'] = self.batteryPercent
         _dict['batteryHealthy'] = self.batteryHealthy
         _dict['batteryLow'] = self.batteryLow
-        
+
         _dict['loadVoltage'] = self.loadVoltage
         _dict['loadPercent'] = self.loadPercent
         _dict['loadRuntime'] = self.loadRuntime
         _dict['loadOk'] = self.loadOk
-        
+
         _dict['lineVoltage'] = self.lineVoltage
         _dict['lineFrequency'] = self.lineFrequency
         _dict['lineOk'] = self.lineOk
-        
-        return _dict	    
+
+        return _dict
 
     def json():
         return json.dumps(self.dict())
 
     def refresh():
         try:
-	        self.__getUPSinfo('Y')
-	        self.upsName = self.__getUPSinfo('\x01')
+            self.__getUPSinfo('Y')
+            self.upsName = self.__getUPSinfo('\x01')
         except:
-	        return 0
-        
+            return 0
+
         try:
-	        self.batteryNominal = float(self.__getUPSinfo('g'))
+            self.batteryNominal = float(self.__getUPSinfo('g'))
             if self.batteryNominal==24.0:
-	            self.batteryVoltage = float(self.__getUPSinfo('B'))/2
+                self.batteryVoltage = float(self.__getUPSinfo('B'))/2
             else
-	            self.batteryVoltage = float(self.__getUPSinfo('B'))/2
-	        self.batteryPercent = float(self.__getUPSinfo('f'))
+                self.batteryVoltage = float(self.__getUPSinfo('B'))/2
+            self.batteryPercent = float(self.__getUPSinfo('f'))
         except:
-	        return 0
+            return 0
 
         try:
-	        self.loadPercent = float(self.__getUPSinfo('P'))
-	        self.loadRuntime = int(self.__getUPSinfo('j')[:-1])
+            self.loadPercent = float(self.__getUPSinfo('P'))
+            self.loadRuntime = int(self.__getUPSinfo('j')[:-1])
         except:
-	        return 0
+            return 0
 
         try:
-	        self.upsTemp = float(self.__getUPSinfo('C'))
-	        self.lineVoltage = float(self.__getUPSinfo('L'))
-	        self.lineFrequency = float(self.__getUPSinfo('F'))
-	        self.loadVoltage = float(self.__getUPSinfo('O'))
+            self.upsTemp = float(self.__getUPSinfo('C'))
+            self.lineVoltage = float(self.__getUPSinfo('L'))
+            self.lineFrequency = float(self.__getUPSinfo('F'))
+            self.loadVoltage = float(self.__getUPSinfo('O'))
         except:
-	        return 0
+            return 0
         else:
 
         try:
-	        statusBits = int(self.__getUPSinfo('Q'), 16)
-	        if statusBits & 0x01:
-		        self.upsCalibrating = True
+            statusBits = int(self.__getUPSinfo('Q'), 16)
+            if statusBits & 0x01:
+                self.upsCalibrating = True
             else:
                 self.upsCalibrating = False
-            
-	        if statusBits & 0x02:
+
+                if statusBits & 0x02:
                 self.upsTrim = True
             else:
                 self.upsTrim = False
-            
-	        if statusBits & 0x04:
-		        self.upsBoost = True
-		    else:
-		        self.upsBoost = False
-		
-	        if statusBits & 0x08:
-	            self.lineOk = True
-	        if statusBits & 0x10:
-	            self.lineOk = False
-	        
-	        if statusBits & 0x20:
-		        self.loadOk = False
-		    else:
-		        self.loadOk = True
-		
-	        if statusBits & 0x40:
-		        self.batteryLow = True
-		    else:
-		        self.batteryLow = False
-		
-	        if statusBits & 0x80:
-		        self.batteryHealthy = False
-		    else:
-		        self.batteryHealthy = True
+
+            if statusBits & 0x04:
+                self.upsBoost = True
+            else:
+                self.upsBoost = False
+
+            if statusBits & 0x08:
+                self.lineOk = True
+            if statusBits & 0x10:
+                self.lineOk = False
+
+            if statusBits & 0x20:
+                self.loadOk = False
+            else:
+                self.loadOk = True
+
+            if statusBits & 0x40:
+                self.batteryLow = True
+            else:
+                self.batteryLow = False
+
+            if statusBits & 0x80:
+                self.batteryHealthy = False
+            else:
+                self.batteryHealthy = True
         except:
-	        return 0
+            return 0
 
     def __openSerialPort():
         self._fd = open(serialPort, 'r+', 0)
@@ -152,29 +152,29 @@ class Ups:
 
 
     def __getUPSinfo(sendChar):
-        #	time.sleep(0.01)
+        #       time.sleep(0.01)
         try:
-	        self._fd.write(sendChar)
-	        self._fd.flush()
-	        returnString1 = self._fd.readline().strip()
-	        # it seems like bugs in processing of the string
-	        # can hose up the serial port.  Prolly resolved,
-	        # but let's keep this just in case...
-	        returnString = copy.deepcopy(returnString1)
+            self._fd.write(sendChar)
+            self._fd.flush()
+            returnString1 = self._fd.readline().strip()
+            # it seems like bugs in processing of the string
+            # can hose up the serial port.  Prolly resolved,
+            # but let's keep this just in case...
+            returnString = copy.deepcopy(returnString1)
         except:
-	        # if the power-status changes while we're talking
-	        # to the serial port, it hoses up the serial port
-	        #  -- I think that bug got solved, but we'll keep
-	        # the work-around in here anyways...
-	        try:
-		        self._fd.close()
-	        except:
-		        pass
-	        self.__openSerialPort()
-	        returnString = ''
+            # if the power-status changes while we're talking
+            # to the serial port, it hoses up the serial port
+            #  -- I think that bug got solved, but we'll keep
+            # the work-around in here anyways...
+            try:
+                self._fd.close()
+            except:
+                pass
+            self.__openSerialPort()
+            returnString = ''
         else:
-	        if '!' in returnString:
-		        returnString = returnString.replace('!', '')
-	        if '$' in returnString:
-		        returnString = returnString.replace('$', '')
+            if '!' in returnString:
+                returnString = returnString.replace('!', '')
+            if '$' in returnString:
+                returnString = returnString.replace('$', '')
         return returnString
