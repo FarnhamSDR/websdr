@@ -33,6 +33,10 @@ Documentation URL: http://www.suws.org.uk/wp/suws-websdr/
 * rtltcp_437.conf
 * rtltcp_10ghz.conf
 
+## Dependencies
+
+libfftw3-3, libpng12-0
+
 ## License
 
 All original and un-attributed work in this repository is licensed as:
