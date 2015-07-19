@@ -256,6 +256,18 @@
 146962.50fmn Narrow Digital
 146975fmn Narrow Digital
 146987.5fmn Narrow Digital
+49970cw BRAMS Radar Meteor pings
+49990cw IEPR Radar Meteor pings
+50150usb SSB Centre of Activity
+50401usb WSPR
+50520fm Internet voice gateway
+50530fm Internet voice gateway
+50540fm Internet voice gateway
+50740fm GB3UM
+50800fm GB3ZY
+50810fm GB3FX
+50840fm GB3AM
+50850fm GB3CT
 9.0am Sferic Lightning cloud to ground
 11.9cw RSDN20
 12.65cw RSD20
