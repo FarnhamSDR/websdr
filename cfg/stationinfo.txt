@@ -268,7 +268,7 @@
 50810fm GB3FX
 50840fm GB3AM
 50850fm GB3CT
-9.0am Sferic Lightning cloud to ground
+9.0am Sferics (lightning cloud to ground)
 11.9cwn RSDN20
 12.65cwn RSD20
 14.88cwn RSDN20
@@ -294,7 +294,7 @@
 25.1cw RJH63
 25.5cw RJH63
 26.7cw TBB
-30.0am Sferic Lightning cloud to cloud
+30.0am Sferics (lightning cloud to cloud)
 37.5cw TFK
 45.9cw NSY
 50.0cw RTZ
