@@ -275,6 +275,7 @@
 16.0cw GBR
 16.4cw JXN
 17.2cw SAQ
+17.9cw RDL
 18.1cw RDL
 18.3cw HWU
 18.9cw RDL
