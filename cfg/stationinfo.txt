@@ -258,16 +258,48 @@
 146987.5fmn Narrow Digital
 49970cw BRAMS Radar Meteor pings
 49990cw IEPR Radar Meteor pings
-50150usb SSB Centre of Activity
+50110usb SSB DX centre
+50150usb SSB Centre of activity
+50285usb SSB Crossband activity
 50401usb WSPR
 50520fm Internet voice gateway
 50530fm Internet voice gateway
 50540fm Internet voice gateway
+50630fm DV calling
 50740fm GB3UM
 50800fm GB3ZY
 50810fm GB3FX
 50840fm GB3AM
 50850fm GB3CT
+51430fm FM Simplex
+51450fm FM Simplex
+51470fm FM Simplex
+51490fm FM Simplex
+51510fm FM Calling
+51530fm FM GB2RS News
+51550fm FM Simplex
+51570fm FM Simplex
+51590fm FM Simplex
+51610fm FM Simplex
+51630fm FM Simplex
+51650fm FM Simplex
+51670fm FM Simplex
+51690fm FM Simplex
+51710fm FM Simplex
+51730fm FM Simplex
+51750fm FM Simplex
+51770fm FM Emergency
+51790fm FM Emergency
+51810fm Repeater output
+51830fm Repeater output
+51850fm Repeater output
+51870fm Repeater output
+51890fm Repeater output
+51910fm Repeater output
+51930fm Repeater output
+51950fm Repeater output
+51970fm Repeater output
+51990fm Repeater output
 9.0am Sferics (lightning cloud to ground)
 11.9cwn RSDN20
 12.65cwn RSD20
