@@ -9,3 +9,8 @@ Open, with cosycave URLs facing you, USBs on left, RF on right, from front to ba
 4. 144MHz
 5. 437MHz
 6. 10GHz
+
+Wall mounted
+
+LF
+50MHz
