@@ -269,9 +269,9 @@
 50840fm GB3AM
 50850fm GB3CT
 9.0am Sferic Lightning cloud to ground
-11.9cw RSDN20
-12.65cw RSD20
-14.88cw RSDN20
+11.9cwn RSDN20
+12.65cwn RSD20
+14.88cwn RSDN20
 16.0cw GBR
 16.4cw JXN
 17.2cw SAQ
