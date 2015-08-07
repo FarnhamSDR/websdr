@@ -272,6 +272,7 @@
 11.9cwn RSDN20
 12.65cwn RSD20
 14.88cwn RSDN20
+15.6cwn RSDN20
 16.0cw GBR
 16.4cw JXN
 17.2cw SAQ
@@ -281,25 +282,32 @@
 18.9cw RDL
 19.6cw GQD
 20.27cw ICV
-20.5cw RJH63
+20.5cw RJH
 20.76cw ICV
 20.9cw HWU
 21.1cw RDL
 21.75cw HWU
 22.1cw GQD
 22.6cw HWU
-23.0cw RJH63
+23.0cw RJH
 23.4cw DOH38
 24.0cw NAA
-25.0cw RJH63
-25.1cw RJH63
-25.5cw RJH63
+25.0cw RJH
+25.1cw RJH
+25.5cw RJH
 26.7cw TBB
+29.7cw I ?
 30.0am Sferics (lightning cloud to cloud)
 37.5cw TFK
+38.0cw SRC
+40.4cw G ? 
+42.5cw SRC
+42.6cw SAS2
 45.9cw NSY
+49.0cw SXA
 50.0cw RTZ
 52.0cw GNY1
+53.4cw TBG
 57.4cw GXH
 60.0cw MSF
 61.8cw RBU?
@@ -311,13 +319,16 @@
 77.5cw DCF77
 81.0cw GYN2
 100.0am LORAN
+124.5cw SXJ
 129.1cw DCF49
 135.6cw HGA22
 135.7cw Amateur Band{
+135.8cw SXV
 136.0usb WSPR
 137.8cw Amateur Band }
 139.0cw DCF39
 147.3cw DDH47
+148.0cw UIW
 162.0am France Inter
 183.0am Europe 1
 198.00am BBC R4
