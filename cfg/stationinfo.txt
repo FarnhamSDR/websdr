@@ -258,6 +258,13 @@
 146987.5fmn Narrow Digital
 49970cw BRAMS Radar Meteor pings
 49990cw IEPR Radar Meteor pings
+50000cwn GB3BUX
+50011cwn PA3FSY
+50016cwn GB3BAA
+50042.5cwn GB3MCB
+50050cwn GB3RAL
+50062.5cwn GB3NGI
+50065cwn GB3IOJ
 50110usb SSB DX centre
 50150usb SSB Centre of activity
 50285usb SSB Crossband activity
