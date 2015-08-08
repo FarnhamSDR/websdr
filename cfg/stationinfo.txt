@@ -365,7 +365,7 @@
 124.5cw SXJ
 129.1cw DCF49
 135.6cw HGA22
-135.7cw Amateur Band{
+135.7cw { Amateur Band
 135.8cw SXV
 136.0usb WSPR
 137.8cw Amateur Band }
