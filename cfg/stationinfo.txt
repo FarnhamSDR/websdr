@@ -267,12 +267,16 @@
 50441cwn ON0SIX
 50459cwn F5ZHI
 50050cwn GB3RAL
+50052cwn EI0SIX
+50060cwn GB3RMK
 50062.5cwn GB3NGI
+50064cwn GB3LER
 50065cwn GB3IOJ
 50110usb SSB DX centre
 50150usb SSB Centre of activity
 50285usb SSB Crossband activity
 50401usb WSPR
+504480cwn FX4VHF
 50520fm Internet voice gateway
 50530fm Internet voice gateway
 50540fm Internet voice gateway
