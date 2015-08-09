@@ -277,10 +277,10 @@
 50125usb SSB US calling
 50150usb SSB centre of activity
 50285usb SSB crossband activity
+50293usb WSPR
 50305usb PSK centre
 50315usb EME centre
 50350usb MS centre
-50401usb WSPR
 50441cwn ON0SIX
 50459cwn F5ZHI
 504480cwn FX4VHF
