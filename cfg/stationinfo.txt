@@ -16,6 +16,7 @@
 1296200usb 1296.2
 1296300usb 1296.3
 432050usb CW Calling
+432090usb OPERA Op5
 432200usb SSB Calling
 432405usb PI7QHN
 432416usb PI7CIS
@@ -134,6 +135,7 @@
 144137usb PSK31 calling
 144140usb ~JT65~
 144175usb uWave Tback
+144180usb OPERA Op5
 144200usb MS Calling
 144300usb SSB Calling
 144403.1cw EI2WRB
@@ -169,6 +171,7 @@
 144950fmn GB7SOU
 144962.5fmn MB7IBR
 144975fm Fast Data
+144980usb OPERA ROS
 145000fm RV48 In
 145012.5fmn RV49 In
 145025fmn RV50 In
@@ -276,6 +279,7 @@
 50110usb SSB DX centre
 50125usb SSB US calling
 50150usb SSB centre of activity
+50245usb OPERA ROS
 50285usb SSB crossband activity
 50293usb WSPR
 50305usb PSK centre
@@ -288,6 +292,7 @@
 50530fm Internet voice gateway
 50540fm Internet voice gateway
 50630fm DV calling
+50700usb OPERA Op1
 50740fm GB3UM
 50800fm GB3ZY
 50810fm GB3FX
@@ -559,7 +564,7 @@
 1810cw 160m Amateur Band {
 1830cw 1830
 1836usb OPERA Op4
-1840usb OPERA
+1840usb OPERA ROS
 1843lsb DX
 1850lsb 1850
 1852.0usb Palermo(IPP)Marine
