@@ -378,7 +378,7 @@
 135.6cw HGA22
 135.7cw { Amateur Band
 135.8cw SXV
-136.0usb WSPR
+136.0usb WSPR & OPERA Op32
 137.8cw Amateur Band }
 139.0cw DCF39
 147.3cw DDH47
@@ -419,6 +419,7 @@
 433.5amn HEN NDB
 472.00cw Amateur Band {
 474.2usb WSPR
+477.0usb OPERA Op8
 479.0cw Amateur Band}
 490.0cw NAVTEX National
 518.0cw NAVTEX International
@@ -557,6 +558,8 @@
 1785.0usb Farsund(LGZ)Marine
 1810cw 160m Amateur Band {
 1830cw 1830
+1836usb OPERA Op4
+1840usb OPERA
 1843lsb DX
 1850lsb 1850
 1852.0usb Palermo(IPP)Marine
