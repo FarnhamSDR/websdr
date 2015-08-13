@@ -279,7 +279,7 @@
 50110usb SSB DX centre
 50125usb SSB US calling
 50150usb SSB centre of activity
-50230cw MS JT6M & FSK441
+50230usb MS JT6M & FSK441
 50245usb OPERA ROS
 50285usb SSB crossband activity
 50293usb WSPR
