@@ -415,8 +415,8 @@ function set_mode(m)      // ...with appropriate filter
       case "AMN":  setmf("amn", -2.5, 2.5); break;
       case "CW":  setmf("cw", 0.55, 0.95); break;
       case "CWN":  setmf("cwn", 0.72, 0.78); break;
-      case "FM":  setmf("fm", -5 , 5); break;
-      case "FMN":  setmf("fmn", -2.5  , 2.5); break;
+      case "FM":  setmf("fm", -6 , 6); break;
+      case "FMN":  setmf("fmn", -3  , 3); break;
    }
 }
 
