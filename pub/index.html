@@ -68,7 +68,7 @@ ga('send', 'pageview');
     <img id="suws-logo" src="suws-logo-topleft.png" alt="SUWS logo">
     <span id="page-title">Farnham WebSDR</span>
 </div>
-<p>This WebSDR (previously known as the Microwave WebSDR) is operated by the <a href="https://www.suws.org.uk/wp/" target="_blank">Southampton University Wireless Society</a> in collaboration with <a href="http://g8jnj.webs.com/" target="_blank">Martin G8JNJ</a>, <a href="http://www.qsl.net/g8gtz/" target="_blank">Noel G8GTZ</a> and <a href="https://www.philcrump.co.uk/" target="_blank">Phil M0DNY</a></p>
+<p>This WebSDR (previously known as the Microwave WebSDR) is operated by the <a href="https://www.suws.org.uk/wp/" target="_blank">Southampton University Wireless Society</a> in collaboration with <a href="http://g8jnj.webs.com/" target="_blank">Martin G8JNJ</a>, <a href="http://www.qsl.net/g8gtz/" target="_blank">Noel G8GTZ</a> and <a href="https://philcrump.co.uk/" target="_blank">Phil M0DNY</a></p>
 <p>More information about how to operate the SUWS Farnham WebSDR and how it works can be found in these documents:-</p>
 <p><a href="WebSDR-User-Guide.pdf" target="_blank"><b>A comprehensive User Guide to the Farnham WebSDR</b></a> - Written by Martin G8JNJ</p>
 <p><a href="WebSDR-Presentation.pdf" target="_blank"><b>A general overview of the Farnham WebSDR</b></a> - Written by Noel G8GTZ</p>
@@ -130,7 +130,7 @@ function load_sats_passes() {
 function load_sat_passes(sat_name,span_id) {
     sats_next_aos[sat_name]=[];
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://www.philcrump.co.uk/sats/api/passes?sat='+sat_name+'&lat=51.23&lon=-0.82&days=1', true);
+    request.open('GET', 'https://philcrump.co.uk/sats/api/passes?sat='+sat_name+'&lat=51.23&lon=-0.82&days=1', true);
     request.onreadystatechange = function() {
         if (this.readyState === 4) {
             if (this.status >= 200 && this.status < 400) {
@@ -169,7 +169,7 @@ function load_sats_positions() {
 }
 function load_sat_position(sat_name,span_id) {
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://www.philcrump.co.uk/sats/api/relative_position?sat='+sat_name+'&lat=51.23&lon=-0.82', true);
+    request.open('GET', 'https://philcrump.co.uk/sats/api/relative_position?sat='+sat_name+'&lat=51.23&lon=-0.82', true);
     request.onreadystatechange = function() {
         if (this.readyState === 4) {
             if (this.status >= 200 && this.status < 400) {
@@ -251,12 +251,12 @@ function intervalString(date_a, date_b) {
 }
 function ping() {
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://www.philcrump.co.uk/a.gif?f='+f+'&m='+mode, true);
+    request.open('GET', 'https://philcrump.co.uk/a.gif?f='+f+'&m='+mode, true);
     request.send();
     request = null ;
 }
 setInterval(ping,10000);
 </script>
-<img name="dummy" src="https://www.philcrump.co.uk/a.gif" style="display:none">
+<img name="dummy" src="https://philcrump.co.uk/a.gif" style="display:none">
 </body>
 </html>
