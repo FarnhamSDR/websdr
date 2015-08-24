@@ -395,35 +395,35 @@
 198.00am BBC R4
 234.0am RTL Radio
 252.0am RTE Radio 1
-277.0amvn CHT NDB
+277.0amv CHT NDB
 291.0cw Wormleighton IALA DGPS
 307.5cw St Catherine's IALA DGPS
 309.5cw Nash Point IALA DGPS
-316.0amvn EPM NDB
-322.0amvn LCY NDB
-328.0amvn BLK NDB
-331.0amvn GST NDB
-332.0amvn SHM NDB
-332.5amvn CAM NDB
-335.0amvn WCO NDB
-339.0amvn BIA NDB
-340.0amvn LSH NDB
-343.0amvn YVL NDB
-345.0amvn LUT NDB
-347.0amvn LHO NDB
-348.0amvn FOS NDB
-352.0amvn WOD NDB
-362.5amvn SND NDB
-367.5amvn OX NDB
-383.0amvn ALD NDB
-383.5amvn LE NDB
-386.0amvn BZ NDB
-391.5amvn EAS NDB
-397.0amvn LZD NDB
-406.0amvn BHX NDB
-414.0amvn BRI NDB
-421.0amvn BUR NDB
-433.5amvn HEN NDB
+316.0amv EPM NDB
+322.0amv LCY NDB
+328.0amv BLK NDB
+331.0amv GST NDB
+332.0amv SHM NDB
+332.5amv CAM NDB
+335.0amv WCO NDB
+339.0amv BIA NDB
+340.0amv LSH NDB
+343.0amv YVL NDB
+345.0amv LUT NDB
+347.0amv LHO NDB
+348.0amv FOS NDB
+352.0amv WOD NDB
+362.5amv SND NDB
+367.5amv OX NDB
+383.0amv ALD NDB
+383.5amv LE NDB
+386.0amv BZ NDB
+391.5amv EAS NDB
+397.0amv LZD NDB
+406.0amv BHX NDB
+414.0amv BRI NDB
+421.0amv BUR NDB
+433.5amv HEN NDB
 472.00cw Amateur Band {
 474.2usb WSPR
 477.0usb OPERA Op8
@@ -457,7 +457,7 @@
 810.0am BBC Radio Scotland
 828.0am Smooth Radio UK
 837.0am Asian Network UK
-850.0amn CIT NDB
+850.0amv CIT NDB
 855.0am RNE Radio 1
 864.0am France Bleu
 873.0am Radio Zaragoza
