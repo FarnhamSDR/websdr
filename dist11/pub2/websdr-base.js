@@ -413,6 +413,7 @@ function set_mode(m)      // ...with appropriate filter
       case "LSBN": setmf("lsbn", -2.2, 0.5); break;
       case "AM":  setmf("am", -4, 4); break;
       case "AMN":  setmf("amn", -2.5, 2.5); break;
+      case "AMVN":  setmf("amvn", -5, 5); break;
       case "CW":  setmf("cw", 0.55, 0.95); break;
       case "CWN":  setmf("cwn", 0.72, 0.78); break;
       case "FM":  setmf("fm", -6 , 6); break;
