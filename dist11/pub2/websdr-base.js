@@ -123,6 +123,7 @@ function send_soundsettings_to_server()
   else if (m=="CWN") m=0;
   else if (m=="AM") m=1;
   else if (m=="AMN") m=1;
+  else if (m=="AMVN") m=1;
   else if (m=="FM") m=4;
   else if (m=="FMN") m=4;
   try {
@@ -413,7 +414,7 @@ function set_mode(m)      // ...with appropriate filter
       case "LSBN": setmf("lsbn", -2.2, 0.5); break;
       case "AM":  setmf("am", -4, 4); break;
       case "AMN":  setmf("amn", -2.5, 2.5); break;
-      case "AMVN":  setmf("amvn", -5, 5); break;
+      case "AMVN":  setmf("amvn", -0.5, 0.5); break;
       case "CW":  setmf("cw", 0.55, 0.95); break;
       case "CWN":  setmf("cwn", 0.72, 0.78); break;
       case "FM":  setmf("fm", -6 , 6); break;
