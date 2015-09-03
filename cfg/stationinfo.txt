@@ -116,7 +116,7 @@
 437600usb AESP-14/AENEAS
 437767usb PolyITAN
 437975usb USS Langley
-143049usb Graves Radar - Meteor Pings
+143050cw Graves Radar - Meteor Pings
 143350amn Belgian Air to Air
 143375amn Belgian Air to Air
 143400amn German Air to Ground
