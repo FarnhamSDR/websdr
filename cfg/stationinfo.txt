@@ -395,6 +395,7 @@
 162.0am France Inter
 183.0am Europe 1
 198.00am BBC R4
+216.0am RMC Info
 234.0am RTL Radio
 252.0am RTE Radio 1
 277.0amv CHT NDB
