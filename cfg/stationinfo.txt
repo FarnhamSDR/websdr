@@ -88,9 +88,11 @@
 435352usb RS-22
 435465usb RS-46
 435565usb RS-46
+435645usb Tianwang-1A&C
 435975fm FO-29 (JAS-2) Digitalker
 435800usb FO-29 (JAS2) >Transponder------
 435900usb FO-29 (JAS2) ------Transponder<
+435880fmn IO-86
 435950usb BeeSat-2
 435796.4usb FO-29 (JAS-2)
 436000usb BeeSat
@@ -101,30 +103,37 @@
 437000fm Digital ATV
 437025usb Chasqui-1
 437100usb NO-45
+437150usb SME-SAT
+437200fmn LilacSat-2
 437230usb Firebird U2 & FU4/SpinSat
-437250usb Prism/AISat/ESTCube-1/TSUBAME
+437250usb Prism/AISat/ESTCube-1/TSUBAME/GomX-3
 437270usb Exocube/IPEX/Shin’en2
 437275usb Cute-1.7
 437280usb Antelsat
+437300usb NUDT‐Phone‐Sat
 437303usb OREOS
 437305usb Vermont Lunar&AO-51
 437325usb ITUpSat1/ARTSAT2
+437365usb SERPENS
 437378usb HORYU-2
 437385usb UWE-3/Shin’en2
 437345usb MO-72/ZACube1
 437397usb Firebird U1
 437405usb Firebird-II FU3/POPSAT-HIP1
-437425usb PhoneSat/UniSat-6
+437425usb PhoneSat/UniSat-6/AAUSAT5/LAPA-A2/ORARI
 437435usb LightSail-1
 437445usb LO-74/BugSat1
 437465usb CO-58
 437485usb Grifex/CO-66/Goliat/ChubuSat-1
 437505usb MO-76/SwissCube-1/ESTCube-1/Shin’en2
-437525usb Sprout
+437525usb SPROUT Beacon
 437538usb Fajr
 437550usb LO-78/ISS Simplex
 437575fm Antelsat
 437600usb AESP-14/AENEAS
+437605fmn SPROUT
+437645usb Tianwang-1B
+437650usb LQSat
 437767usb PolyITAN
 437975usb USS Langley
 143050cw Graves Radar - Meteor Pings
@@ -149,6 +158,7 @@
 144180usb OPERA Op5
 144200usb MS Calling
 144300usb SSB Calling
+144390usb LilacSat-2 Beacon
 144403.1cw EI2WRB
 144409.60cw F5ZFS
 144415.5cw PI7CIS
@@ -249,18 +259,20 @@
 145787.5fmn GB3JB
 145800fm ISS Voice/SSTV
 145815usb QB50p1
-145825fm ISS & PSat Packet
+145825fm ISS/PSat/LAPA-A2/ORARI Packet
 145840usb UKCUBE1
+145960usb QB50p1/EO-79
 145865usb DO-64
-145880usb QB50p2
+145880usb QB50p2/LAPA-A2/ORARI
 145915usb FUNCUBE2
 145935usb FUNCUBE1
 145940usb QB50p1 Transponder
 145955usb AO-7 Transponder
+145960usb AO-73 Transponder
 145970usb AO-7
 145974usb DeorbitSail
-145960usb AO-73 Transponder
-145980usb DUCHIFAT/TISat1
+145980usb DUCHIFAT/TISat1/SERPENS
+145982fmn AO-85
 146500fm Wideband digital modes
 146900fmn Narrow Digital
 146912.5fmn Narrow Digital
