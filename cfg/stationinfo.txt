@@ -354,6 +354,7 @@
 51990fmn Repeater output
 9.0am Sferics (lightning cloud to ground)
 11.9cwn RSDN20
+12.09cwn RSDN20
 12.65cwn RSD20
 14.88cwn RSDN20
 15.6cwn RSDN20
