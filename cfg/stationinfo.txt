@@ -355,7 +355,7 @@
 9.0am Sferics (lightning cloud to ground)
 11.9cwn RSDN20
 12.09cwn RSDN20
-12.65cwn RSD20
+12.65cwn RSDN20
 14.88cwn RSDN20
 15.6cwn RSDN20
 16.0cw GBR
