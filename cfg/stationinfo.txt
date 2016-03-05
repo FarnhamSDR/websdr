@@ -136,6 +136,7 @@
 437645usb Tianwang-1B
 437650usb LQSat
 437767usb PolyITAN
+437800fm STMSat-1 (SSTV)
 437975usb USS Langley
 143050cw Graves Radar - Meteor Pings
 143350amn Belgian Air to Air
