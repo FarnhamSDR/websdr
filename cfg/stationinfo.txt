@@ -275,7 +275,7 @@
 145962usb AO-73 Transponder
 145970usb AO-7
 145974usb DeorbitSail
-145980usb DUCHIFAT/TISat1/SERPENS
+145980usb DUCHIFAT/TISat1/SERPENS/OUFTI-1
 145982fmn AO-85
 146500fm Wideband digital modes
 146900fmn Narrow Digital
