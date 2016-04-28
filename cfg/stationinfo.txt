@@ -427,8 +427,19 @@
 252.0am RTE Radio 1
 277.0amv CHT NDB
 291.0cw Wormleighton IALA DGPS
+297.0cw Girdle Ness IALA DGPS
+297.5cw Point Lynas IALA DGPS
+298.5cw Helgoland IALA DGPS
+299.0cw La Hague IALA DGPS
+299.5cw North Foreland IALA DGPS
+303.5cw Rota IALA DGPS
+306.0cw Lizard IALA DGPS
 307.5cw St Catherine's IALA DGPS
+308.5cw Point De Buis IALA DGPS
 309.5cw Nash Point IALA DGPS
+312.0cw Oostende IALA DGPS
+312.5cw Hoek van Holland IALA DGPS
+314.0cw Utv*r IALA DGPS
 316.0amv EPM NDB
 322.0amv LCY NDB
 328.0amv BLK NDB
