@@ -145,15 +145,19 @@
 143400amn German Air to Ground
 143600amn Belgian Air to Air
 143625fm VHF-2 Russian downlink from ISS
-143750fm Illegal Air use
-143775fm Illegal Air use
-143800fm Illegal Air use
-143825fm Illegal Air use
-143850fm Illegal Air use
-143875fm Illegal Air use
-143900fm Illegal Air use
-143925fm Illegal Air use
-143950fm Illegal Air use
+143700fm Unoffical Alternative Calling Paragliders UK
+143725fm Unoffical Paragliders UK
+143750fm Unoffical Paragliders UK
+143775fm Unoffical Paragliders UK
+143800fm Unoffical Paragliders UK
+143825fm Unoffical Paragliders UK
+143850fm Unoffical Alternative Calling Paragliders UK
+143875fm Unoffical Paragliders UK
+143900fm Unoffical Paragliders UK
+143925fm Unoffical Paragliders UK / Instruction Portugal
+143937.5fm Paragliders Portugal
+143950fm Unoffical Main Calling Paragliders UK / Emergency Portugal
+143987.5fm Paragliders & free flight sports France
 144050usb CW Calling
 144137usb PSK31 calling
 144140usb ~JT65~
