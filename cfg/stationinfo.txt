@@ -94,7 +94,7 @@
 435800usb FO-29 (JAS2) >Transponder------
 435900usb FO-29 (JAS2) ------Transponder<
 435880fmn IO-86
-435950usb BeeSat-2
+435950usb BeeSat-4
 435796.4usb FO-29 (JAS-2)
 436000usb BeeSat
 436250usb AggieSat4
@@ -103,7 +103,7 @@
 436837usb CO-55
 436847usb CO-57
 437000fm Digital ATV
-437025usb Chasqui-1
+437025usb Chasqui-1/Swayam COEP
 437026fm Tomsk-TPU-120
 437100fm NODES
 437150usb SME-SAT
@@ -116,7 +116,7 @@
 437300usb NUDT‐Phone‐Sat
 437303usb OREOS
 437305usb Vermont Lunar&AO-51
-437325usb ITUpSat1/ARTSAT2/Bevo-2
+437325usb ITUpSat1/ARTSAT2/Bevo-2/Venta-1
 437345fm MinXSS-1
 437365usb SERPENS
 437378usb HORYU-2
@@ -130,7 +130,7 @@
 437465usb CO-58
 437485usb Grifex/CO-66/Goliat/ChubuSat-1/e-st@r-II
 437505usb MO-76/SwissCube-1/ESTCube-1/Shin’en2
-437525usb SPROUT Beacon
+437525usb SPROUT / BIROS
 437538usb Fajr
 437550usb LO-78/ISS Simplex
 437575fm Antelsat
@@ -272,17 +272,18 @@
 145840usb UKCUBE1
 145865usb DO-64
 145880usb QB50p2/LAPA-A2/ORARI
+145900usb ÑUSAT-1
 145915usb FUNCUBE2
 145930usb VELOX-2
 145935usb FUNCUBE1
 145940usb QB50p1/EO-79 Transponder
 145950fmn OUFTI-1
 145955usb AO-7 Transponder
-145960usb QB50p1/EO-79
+145960usb QB50p1/EO-79/Max Valier
 145962usb AO-73 Transponder
 145970usb AO-7
 145974usb DeorbitSail
-145980usb DUCHIFAT/TISat1/SERPENS/OUFTI-1
+145980usb DUCHIFAT/TISat1/SERPENS/OUFTI-1/Sathyabamasat
 145982fmn AO-85
 146500fm Wideband digital modes
 146900fmn Narrow Digital
