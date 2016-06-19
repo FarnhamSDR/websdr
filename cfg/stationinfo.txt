@@ -316,9 +316,12 @@
 50125usb SSB US calling
 50150usb SSB centre of activity
 50230usb MS JT6M / FSK441
+50320usb JT6M
+50235usb ISCAT
 50245usb OPERA ROS
 50250usb PSK31/
-50276usb JT65
+50276usb JT65A
+50278usb JT9
 50285usb SSB crossband activity
 50293usb WSPR
 50305usb PSK centre
