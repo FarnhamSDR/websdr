@@ -565,7 +565,7 @@
 1377.0am France Info
 1386.0am Misc RSL UK
 1395.0am Radio Tirana
-1404.0am France Info
+1404.0am France Info & ERT Komotini Greece 
 1413.0am Premier Radio London
 1422.0am Deutschlandfunk
 1431.0am Smooth Radio Reading UK
