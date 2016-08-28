@@ -1,0 +1,3 @@
+[submodule "pub/ntp"]
+	path = pub/ntp
+	url = https://github.com/SUWS/ntp-stats.git
