@@ -438,10 +438,12 @@
 139.0cw DCF39
 147.3cw DDH47
 148.0cw UIW
+153.0am Antena Satelor
 162.0am France Inter
 183.0am Europe 1
 198.00am BBC R4
 216.0am RMC Info
+225.0am Polskie Radio RP1
 234.0am RTL Radio
 252.0am RTE Radio 1
 277.0amv CHT NDB
