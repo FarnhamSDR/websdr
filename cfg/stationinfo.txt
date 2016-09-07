@@ -388,14 +388,14 @@
 18.1cw RDL
 18.3cw HWU
 18.9cw RDL
-19.6cw GQD
+19.6cw GQD/GBZ
 20.27cw ICV
 20.5cw RJH
 20.76cw ICV
 20.9cw HWU
 21.1cw RDL
 21.75cw HWU
-22.1cw GQD
+22.1cw GBZ/GQD
 22.6cw HWU
 23.0cw RJH
 23.4cw DOH38
@@ -409,6 +409,7 @@
 37.5cw TFK
 38.0cw SHR Ruda
 40.4cw SAS Varberg
+40.75cw NST
 42.5cw SRC
 42.6cw SAS2
 44.2cw SWE SAS2 SRC Tving
@@ -427,7 +428,9 @@
 68.0cw GBY20?
 77.5cw DCF77
 81.0cw GYN2
+82.75cw GYB/MKL?
 100.0am LORAN
+125.0cw DCF45?
 124.5cw SXJ
 129.1cw DCF49
 135.6cw HGA22
@@ -436,6 +439,7 @@
 136.0usb WSPR & OPERA Op32
 137.8cw Amateur Band }
 139.0cw DCF39
+145.0cw UKB/YLQ63?
 147.3cw DDH47
 148.0cw UIW
 153.0am Antena Satelor
