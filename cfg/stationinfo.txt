@@ -575,8 +575,10 @@
 1260.0am Absolute Radio UK
 1269.0am Deutschlandfunk
 1278.0am France Bleu & Misc RSL UK
+1287.0am BFBS Radio Aldershot UK
 1296.0am Radio XL UK
 1305.0am Premier Radio UK
+1314.0am RNE Radio 5 Spain
 1323.0am Smooth Radio UK
 1332.0am Premier Radio London
 1341.0am Radio Ulster
