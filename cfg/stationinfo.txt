@@ -605,6 +605,7 @@
 1566.0am Premier Radio Surrey UK
 1575.0am RAI Radiouno
 1584.0am Panjab Radio London
+1593.0am SRR Radio Romania ?
 1602.0am BBC Radio Kent
 1635.0usb Vardo(LGV)Marine
 1638.0usb Turku(OFK)Marine
