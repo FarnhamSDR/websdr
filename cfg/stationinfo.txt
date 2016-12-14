@@ -136,7 +136,7 @@
 437505usb MO-76/SwissCube-1/ESTCube-1/Shin’en2
 437525usb SPROUT / BIROS
 437538usb Fajr
-437550usb LO-78/ISS Simplex
+437550usb International Space Station ISS Packet / LO-78
 437575fm Antelsat
 437600usb AESP-14/AENEAS
 437605fmn SPROUT
