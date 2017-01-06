@@ -113,6 +113,7 @@
 435950usb BeeSat-4
 435796.4usb FO-29 (JAS-2)
 436000usb BeeSat
+436200fmn BY70-1 FM transponder downlink
 436250usb AggieSat4
 436395usb UWE-3
 436795usb AO-27
