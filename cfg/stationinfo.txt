@@ -308,12 +308,13 @@
 145930usb VELOX-2
 145935usb FUNCUBE1
 145940usb QB50p1/EO-79 Transponder
-145950fmn OUFTI-1
+145950fmn OUFTI-1/Nayif-1
 145955usb AO-7 Transponder
 145960usb QB50p1/EO-79/Max Valier
 145962usb AO-73 Transponder
 145970usb AO-7
 145974usb DeorbitSail
+145975usb Nayif-1 Transponder
 145980usb DUCHIFAT/TISat1/SERPENS/OUFTI-1/Sathyabamasat
 145982fmn AO-85
 146500fm Wideband digital modes
