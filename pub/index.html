@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="Description" content="SUWS Farnham WebSDR in IO91OF">
-<meta name="Keywords" content="websdr,microwave,3cm,70cm,2m,6m,437,434,432,143,144,145,146,50,136,472,graves,hab,mhz,lf,vlf,mw,hf,am,vhf,uhf,online,receiver,radio,suws,basingstoke,farnham,gb3hv,g3kmi">
 <link rel="shortcut icon" href="suws-favicon.ico">
 <title>SUWS Farnham WebSDR</title>
 <!--#include file="websdr-head.html"-->
@@ -107,17 +106,6 @@ ga('send', 'pageview');
 <ul><li><b>5 KHz - 2 MHz</b> - LF Bands - Lightning, Data, Beacons, AM broadcast stations, 136KHz, 472KHz & 1900KHz Amateur Bands.</ul></li>
 </ul></li>
 <p>
-<b>Upcoming Satellite Passes:</b> (updated automatically every 5 minutes)<br>
-<ul>
-<li><strong>ISS</strong><ul>
-<li><span id="iss-passes">Loading..</span></li>
-</ul></li>
-<br>
-<li><strong>FUNCUBE-1</strong><ul>
-<li><span id="funcube-passes">Loading..</span></li>
-</ul></li>
-</ul>
-<br>
 <b><a href="http://www.n2yo.com/satellites/?c=18" target="_blank">N2YO Amateur Satellite Tracking</a> (opens in new tab)</b>
 <br><br>
 There are currently <span id=numusers2>?</span> Users on this WebSDR. The software used for this WebSDR is kindly provided by the <a href="http://www.websdr.org">WebSDR Project</a>
@@ -125,47 +113,6 @@ There are currently <span id=numusers2>?</span> Users on this WebSDR. The softwa
 <!--#include file="websdr-controls.html"-->
 <script>
 var sats_next_aos=[];
-// ISS Passes
-load_sats_passes();
-setInterval(load_sats_passes,5*60*1000);
-function load_sats_passes() {
-    load_sat_passes('ISS%20(ZARYA)','iss-passes');
-    load_sat_passes('FUNCUBE-1%20(AO-73)','funcube-passes');
-}
-function load_sat_passes(sat_name,span_id) {
-    sats_next_aos[sat_name]=[];
-    var request = new XMLHttpRequest();
-    request.open('GET', 'https://philcrump.co.uk/sats/api/passes?sat='+sat_name+'&lat=51.23&lon=-0.82&days=1', true);
-    request.onreadystatechange = function() {
-        if (this.readyState === 4) {
-            if (this.status >= 200 && this.status < 400) {
-                var data = JSON.parse(this.responseText);
-                var dataLength = data.length;
-                var htmlString="";
-                for(var i=0;i<dataLength; i++)
-                {
-                    aos_date = new Date(data[i].aostime);
-                    los_date = new Date(data[i].lostime);
-                    sats_next_aos[sat_name][i]=aos_date;
-                    if(i!=0)
-                    {
-                        htmlString+=", ";
-                    }
-                    htmlString+="<b>"+timeString(aos_date)+" - "+timeString(los_date)+"</b> UTC";
-                }
-                if(dataLength==0)
-		{
-		    htmlString="No passes in the next 24 hours."
-		}
-                document.getElementById(span_id).innerHTML = htmlString;
-            } else {
-                document.getElementById(span_id).innerHTML = "Error: Data could not be loaded";
-            }
-        }
-    };
-    request.send();
-    request = null;
-}
 load_sats_positions();
 setInterval(load_sats_positions,2*1000);
 function load_sats_positions() {
