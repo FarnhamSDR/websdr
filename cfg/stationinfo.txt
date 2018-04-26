@@ -543,13 +543,14 @@
 518.0cw NAVTEX International
 541.0am Onda Cero Catal
 549.0am Deutschlandfunk
-558.0am Spectrum Radio London
+558.0am Love Sport
 576.0am RNE Radio 5
 585.0am RNE Radio 1
 603.0am France Info
 621.0am RTBF
 630.0am Three Counties Radio UK
 639.0am RNE Radio 1
+648.0am Radio Caroline
 666.0am Radio Barcelona
 675.0am Radio Maria
 684.0am RNE Radio 1 
