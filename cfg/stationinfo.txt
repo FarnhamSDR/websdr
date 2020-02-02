@@ -328,6 +328,37 @@
 146962.50fmn Narrow Digital
 146975fmn Narrow Digital
 146987.5fmn Narrow Digital
+70000cw GB3BUX
+70007cw GB3WSX
+70016cw GB3BAA
+70020cw GB3ANG
+70025cw GB3MCB
+70027cw GB3CFG
+70030cw G4JNT/P
+70050cw GB3RAL
+70085usb PSK31
+70091usb WSPR
+70150usb MS Calling
+70154usb FT8
+70200usb CW/SSB calling
+70250usb MS calling
+70260fmn AM/FM calling
+70300fmn AM/FM
+70312.5fmn Digital modes
+70325fmn DX Cluster
+70337.5fmn Digital modes
+70350fmn Internet voice gateway
+70362.5fmn Internet voice gateway
+70375fmn AM/FM
+70387.5fmn Internet voice gateway
+70400fmn AM/FM
+70412.5fmn Internet voice gateway
+70425fmn FM simplex
+70437.5fmn Digital modes
+70450fmn FM calling
+70462.5fmn Digital modes
+70475fmn AM/FM
+70487.5fmn Digital modes
 49970cw BRAMS Radar Meteor pings
 49990cw IEPR Radar Meteor pings
 50000cwn GB3BUX
