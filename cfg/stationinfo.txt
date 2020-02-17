@@ -232,7 +232,7 @@
 144925fmn GB7IPF
 144937.5fmn GB7CR
 144950fmn GB7SOU
-144962.5fmn MB7IBR
+144962.5fmn MB7IBR Internet voice gateway
 144975fm Fast Data
 144980usb OPERA ROS
 145000fm RV48 In
@@ -338,11 +338,16 @@
 70050cw GB3RAL
 70085usb PSK31
 70091usb WSPR
+70100usb FT8
 70150usb MS Calling
 70154usb FT8
+70174usb FT8
+70176usb JT65
+70178usb JT9
 70200usb CW/SSB calling
 70250usb MS calling
 70260fmn AM/FM calling
+70280usb MSK144
 70300fmn AM/FM
 70312.5fmn Digital modes
 70325fmn DX Cluster
@@ -352,7 +357,7 @@
 70375fmn AM/FM
 70387.5fmn Internet voice gateway
 70400fmn AM/FM
-70412.5fmn Internet voice gateway
+70412.5fmn MB7ABR Internet voice gateway
 70425fmn FM simplex
 70437.5fmn Digital modes
 70450fmn FM calling
@@ -401,7 +406,7 @@
 50451cw LA7SIX
 50459cwn F5ZHI
 504480cwn FX4VHF
-50520fmn Internet voice gateway
+50520fmn MB7IBR Internet voice gateway
 50530fmn Internet voice gateway
 50540fmn Internet voice gateway
 50630fm DV calling
