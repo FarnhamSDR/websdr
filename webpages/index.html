@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Farnham WebSDR</title>
+    <meta name="description" content="Farnham VHF/UHF WebSDR">
+    <meta name="author" content="M0DNY, G8JNJ, G8GTZ">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/lib/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+    <script src="tmp/bandinfo.js"></script>
+    <script src="markers.js?v=0"></script>
+    <script src="websdr-base.js?v=4"></script>
+    <script src="websdr-chat.js?v=0"></script>
+  </head>
+  <body class="bg-light" onload=bodyonload()>
+    <div id="topbar">
+      <img id="suws-logo" src="/img/suws-logo-topleft.png" alt="SUWS logo">
+      <span id="page-title">Farnham WebSDR</span>
+    </div>
+    <div id="top-description">
+      <p>The Farnham WebSDR is operated by <a href="http://g8jnj.webs.com/" target="_blank">Martin G8JNJ</a>, <a href="http://www.qsl.net/g8gtz/" target="_blank">Noel G8GTZ</a> and <a href="https://twitter.com/philcrump2/" target="_blank">Phil M0DNY</a>.</p>
+<ul>
+<li><a href="WebSDR-User-Guide.pdf" target="_blank"><b>A comprehensive User Guide to the Farnham WebSDR</b></a> - Written by Martin G8JNJ</li>
+<li><a href="WebSDR-Presentation.pdf" target="_blank"><b>A general overview of the Farnham WebSDR</b></a> - Written by Noel G8GTZ</li>
+</ul>
+
+<p>The SDR is located in IO91OF - If you are using this SDR to track High Altitude Balloons with <a href="http://tracker.habhub.org/" target="_blank">Habhub</a> please use Latitude: 51.23, Longitude: -0.82</p>
+
+<ul>
+<li>3cm
+<ul><li><b> 10.368 GHz - 10.370 GHz</b> - 3cm Band - Amateur radio propagation beacons and narrow band modes such as SSB & CW</li>
+<li>The strong beacon signal is GB3SEE, but other signals will apear when propagation conditions are enhanced </li>
+</ul></li>
+<li>437
+<ul><li><b> 436 MHz - 438 MHz</b> - 70cm Band - Amateur radio satellites and Digital Television</li>
+</ul></li>
+<li>435
+<ul><li><b> 434 MHz - 436 MHz</b> - 70cm Band - International Space Station, Amateur radio satellites and High Altitude Balloon (HAB) telemetry</li>
+</ul></li>
+<li>433
+<ul><li><b> 432 MHz - 434 MHz</b> - 70cm Band - Amateur radio narrow band modes, FM repeaters & simplex activity and licence free short range radio devices</li>
+<li>GB3FN is based less than a mile away and may cause interference to reception on 70cm when it is in use</li>
+</ul></li>
+<li>144
+<ul><li><b>143 MHz - 145 MHz</b> - Graves Radar meteor pings , Russian Space downlink, 2m Band - Amateur radio narrow band modes and beacons.</li>
+</ul></li>
+<li>146
+<ul><li><b>145 MHz - 147 MHz</b> - 2m Band - FM repeaters & simplex activity, satellites and the International Space Station, Digital modes.</li>
+</ul></li>
+<li>70
+<ul><li><b>70 MHz - 72 MHz</b> - 4m Band - Amateur radio CW, SSB, beacons, digital modes & FM simplex.</li>
+</ul></li>
+<li>50
+<ul><li><b>49.99 MHz - 51.99 MHz</b> - 6m Band - Radar meteor pings, Amateur radio CW, SSB, beacons, digital modes & FM simplex & repeaters.</li>
+</ul></li>
+<li>LF/MF/HF
+<ul><li><b>10KHz - 32MHz</b> - NEW: Moved to <a href="http://kiwi.farnham-sdr.com:8073/">KiWi WebSDR</a></li>
+</ul></li>
+</ul></li>
+      <ul>
+        <li>More information about the WebSDR software can be found on <a href="http://www.websdr.org" target="_blank">www.websdr.org</a></li>
+      </ul>
+    </div>
+
+    <div id="dummyforie"></div>
+    <a href="m.html">
+      <div id="mobilewarning" class="warning">
+        It seems you are using a mobile device; click here to switch to the mobile version of this site.
+      </div>
+    </a>
+
+    <div id="cookie_warning" class="warning">
+      Your browser is trying to send too many cookies, this doesn't work with the websdr application. <a id="clear-cookie-link" href="">Please click here to clear your cookies and refresh the page</a>
+    </div>
+
+    <div id="html5warning" class="warning">
+      Your browser does not seem to support HTML5 WebAudio; please try a recent version of Firefox, Chrome, Opera or Safari.
+    </div>
+
+    <hr class="hr-reducedmargin" style="clear:both">
+
+    <form name="viewform" action="#">
+      <div class="ctl">
+        <b>View:</b>
+        <span id="viewformbuttons"></span>
+      </div>
+      <div class="ctl">
+        <b>Allow keyboard:</b>
+        <input type="checkbox" name="allowkeys" value="">
+        <div class="keylist">
+          <tt><b>j k &larr; &rarr;</b></tt>: freq down/up (+shift/ctrl/alt faster)
+          <br>
+          <tt><b>u l c a f</b></tt>: USB, LSB, CW, AM, FM
+          <br>
+          <tt><b>z Z</b></tt>: center/zoom waterfall 
+          <br>
+          <tt><b>g</b></tt>: enter frequency
+        </div>
+      </div>
+    </form>
+
+    <form name="html5choiceform" action="#">
+      <div class="ctl">
+        <b>Waterfall:</b>&nbsp;<span id="html5-waterfall-status">HTML5</span>
+        &nbsp;&nbsp;
+        <b>Sound:</b>&nbsp;<span id="html5-sound-status">HTML5</span>
+        <input class="sound-start" id="autoplay-start" type="button" value="Click to start sound!" onclick="start_audio();">
+      </div>
+    </form>
+
+    <div class="ctl">
+      <span id=numusers>_</span> user(s) online.
+    </div>
+
+    <br style="clear:both">
+    <div id="receiver-interface">
+      <div style="position:relative" class=clear>
+        <div id="waterfalls"></div>
+        <div class="hideblind">
+          <img src="edgelower.png" title="drag to change filter" id="edgelower" onmousedown="mousedownlower(event)" class="scaleabs" alt="">
+          <img src="edgeupper.png" title="drag to change filter" id="edgeupper" onmousedown="mousedownupper(event)" class="scaleabs" alt="">
+          <div id="yellowbara">
+            <div id="yellowbar" title="drag to tune" class="scaleabs" style="position:absolute;width:100px;height:18px;background-color:transparent" onmousedown="mousedownpassband(event)">
+            <div id="yellowbarr" class="scaleabs" style="position:relative;left:0px;">
+              <div class="scaleabs" style="position:absolute;width:0px;height:0px;"></div>
+            </div>
+          </div>
+          <img src="carrier.png" title="drag to tune" id="carrier" onmousedown="mousedownpassband(event)" class="scaleabs" style="z-index:2" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="receiver-undercontrols">
+      <div style="white-space:nowrap;">
+        <div class="ctl">
+         <form name="freqform" action="#" onsubmit="setfreqif(this.frequency.value); return false;">
+           <span title="Or tune by clicking/dragging/scrollwheel on the frequency scale.">
+            <span class="showblind">
+              <input id="freqstepm3" type="button" value="---" onclick="freqstep(-3)">
+              <input type="button" value="--" onclick="freqstep(-2)">
+              <input type="button" value="-" onclick="freqstep(-1)">
+            </span>
+            <input type="text" style="font-size:20px; text-align:center" size=10 name="frequency" onkeyup="setfreqif_fut(this.value);"> kHz
+            <input type="submit" style="position:absolute; left:-999px; width:1px" value="submit">  <!-- IE sillyness: submit on enter doesn't work with visibility:none ; other IE sillyness requires the width setting -->
+            <span style="margin-left: 15px;">
+              <script> if (dxinfoavailable) document.write('<input type="checkbox" name="hidedx" value="" onclick="sethidedx(!this.checked)" checked>&nbsp;labels</input>');</script>
+            </span>
+            <div class="buttonrow">
+              <span class="hideblind">
+              <button class="freqbutton" onclick="freqstep(-3)">&minus;&minus;&minus;</button>
+              <button class="freqbutton" onclick="freqstep(-2)">&minus;&minus;</button>
+              <button class="freqbutton" onclick="freqstep(-1)">&minus;</button>
+              </span>
+              <button class="freqbutton" onclick="freqstep(+1)">+</button>
+              <button class="freqbutton" onclick="freqstep(+2)">++</button>
+              <button class="freqbutton" onclick="freqstep(+3)">+++</button>
+            </div>
+            <script> document_bandbuttons(); </script>
+           </span>
+          <div class="buttonrow" ID="mode-buttons">
+            <button id="btn-CW"  class="modebutton" onclick="set_mode('cw');">CW</button>
+            <button id="btn-LSB" class="modebutton" onclick="set_mode('lsb');">LSB</button>
+            <button id="btn-USB" class="modebutton" onclick="set_mode('usb');">USB</button>
+      	    <button id="btn-AM"  class="modebutton" onclick="set_mode('am');">AM</button>
+      	    <button id="btn-FM"  class="modebutton" onclick="set_mode('fm');">FM</button>
+            <br>
+            <button id="btn-CW-nrw"  class="modebutton" onclick="set_mode('cwn');">CW-nrw</button>
+            <button id="btn-LSB-nrw" class="modebutton" onclick="set_mode('lsbn');">LSB-nrw</button>
+            <button id="btn-USB-nrw" class="modebutton" onclick="set_mode('usbn');">USB-nrw</button>
+            <button id="btn-AM-nrw"  class="modebutton" onclick="set_mode('amn');">AM-nrw</button>
+            <button id="btn-FM-nrw"  class="modebutton" onclick="set_mode('fmn');">FM-nrw</button>
+          </div>
+          <b style="padding-left: 0.2rem;">Memories:</b>
+          <div id="memories" class="memories"></div>
+        </form>
+      </div>
+
+
+      <div class="ctl">
+       <span title="Or change bandwidth by dragging the passband edges on the frequency scale.">
+        Filter: <b><span id="numericalbandwidth6">?</span></b> kHz
+          <button type="button" class="modebutton" style="min-width: 45px;" value="narrower" onclick="lo+=0.0525; hi-=0.0525; updbw();">-</button>
+          <button type="button" class="modebutton" style="min-width: 45px;" onclick="lo-=0.0525; hi+=0.0525; updbw();">+</button>
+       </span>
+          <hr>
+        <input id="squelchcheckbox" title="block noise if no signal" type="checkbox" value="" 
+           onclick="setsquelch(this.checked); if (this.checked) document.getElementById('squelchlevelmask').classList.remove('hiddencontrol'); else document.getElementById('squelchlevelmask').classList.add('hiddencontrol')"
+           >&nbsp;squelch
+        <input id="autonotchcheckbox" title="automatically filter out interfering carrier (beep/whistle)" type="checkbox" value="" onclick="setautonotch(this.checked)">&nbsp;autonotch
+        <div id="record_span">
+          <hr>
+          Audio recording<br>
+          <button id="recbutton" onclick="record_click(); return false">start</button>
+          <span id="reccontrol"></span>
+          <br>
+          <div id="recwarning" style="width:300px; display:none; font-size:-1; color:red">Your browser does not seem to support downloading the recording; please try a recent version of Firefox, Chrome or Opera.</div>
+        </div>
+      </div>
+
+
+      <div class="ctl">
+        <div class="hideblind">
+          <div style="width:250px;background-color:black;">
+          <br>
+          <div id="smeterpeak" style="width:100px;height:4px;background-color:#ff8000;position:absolute;">
+            <div style="position:absolute;width:0px;height:0px;"></div>
+          </div>
+          <div id="smeterbar" style="width:100px;height:4px;background-color:#00ff00;position:absolute;">
+            <div style="position:absolute;width:0px;height:0px;"></div>
+          </div>
+          <br>
+          <img src="smeter1.png" alt="[scale]">
+          <br>
+          </div>
+        </div>
+        <span id="numericalsmeter">?</span> dB;
+        peak
+        <span id="numericalsmeterpeak">?</span> dB;
+          <hr style="margin-top: 0.66rem; margin-bottom: 0.66rem;">
+        <span id="volumecontrol" style="white-space:nowrap; width:50%">
+          Volume:
+          <input type="range" min="-20" max="6" id="volumecontrol2" name="volume" value="-7" step="1"
+          oninput="soundapplet.setvolume(Math.pow(10,this.value/10.))"
+          onchange="soundapplet.setvolume(Math.pow(10,this.value/10.))">
+          <input id="mutecheckbox" title="disable sound" type="checkbox" value="" onclick="setmute(this.checked)">&nbsp;mute
+        </span>
+          <hr style="margin-top: 0.66rem; margin-bottom: 0.66rem;">
+          Signal strength plot:
+          <select id="sgraphchoice">
+            <option selected value=0>none</option>
+            <option value=1>fast</option>
+            <option value=10>slow</option>
+            <option value=100>very slow</option>
+          </select>
+        <div>
+          <canvas id="sgraph" style="width:100%; display:none;"></canvas>
+        </div>
+      </div>
+
+      <div class="ctl">
+        Waterfall zoom
+        <br>
+        <input type="button" title="zoom out one step" value="&minus;" style="min-width: 80px;" onclick="wfset(1);">
+        <input type="button" title="zoom in one step" style="min-width: 80px;" value="+" onclick="wfset(0);">
+        <br>
+        <input type="button" title="view entire frequency range of this receiver" style="min-width: 80px;" value="><" onclick="wfset(4);">
+        <input type="button" title="zoom in as deep as possible" value="<>" style="min-width: 80px; margin-bottom: 10px;" onclick="wfset(2);">
+        <br>
+        <label class="wfctl-label">Speed:</label>
+        <select id="wfspeed" class="wfctl" onchange="waterfallspeed(this.value)">
+          <option value="30">super slow</option>
+          <option value="10">very slow</option>
+          <option selected value="4">slow</option>
+          <option value="2">medium</option>
+          <option value="1">fast</option>
+        </select>
+        <br>
+        <label class="wfctl-label">Size:</label>
+        <select id="wfsize" class="wfctl" onchange="waterfallheight(this.value)">
+          <option value="50">small</option>
+          <option selected value="100">medium</option>
+          <option value="200">large</option>
+           <option value="400">larger</option>
+          <option value="600">huge</option>
+        </select>
+        <br>
+        <label class="wfctl-label">View:</label>
+        <select id="wfmode" class="wfctl" onchange="waterfallmode(this.value)">
+          <option value="0">spectrum</option>
+          <option selected value="1">waterfall</option>
+          <option value="2">weak sigs</option>
+          <option value="3">strong sigs</option>
+        </select>
+      </div>
+
+    </div>
+    </div>
+
+    <br style="clear:both">
+
+<div id=users></div>
+
+<hr>
+<div id="chatboxspan">
+<p><b>Chatbox:</b>
+<br>
+<form name="usernameform" action="#">
+<script type="text/javascript">
+document_username();
+</script>
+<span style="font-size:80%">
+<br>
+<br>
+This chatbox is intended to discuss the operation of the WebSDR, please add your name or callsign in the textbox above. The operators of this site disclaim any responsibility for text appearing in this chatbox.</span>
+<br>
+<br>
+<div id="chatboxnew" style="background-color:#c0ffff; overflow:auto; height:250px; width:100%; font-family: monospace"></div>
+<input type="text" size=1 name="dummytopreventsubmissiononenter" style="display:none" onclick="">
+</form>
+<br>
+<form name="chatform" onsubmit="return sendchat()" action="#">
+<input type="text" size=90 name="chat" onclick="">
+<input type="button" value="chatbox submit" onclick="return sendchat()">
+</form>
+</div>
+
+<hr>
+<div class="ctl">
+  <b>Logbook:</b>
+  <form name="logform" action="#">
+  Please enter the callsign of any interesting signal that you hear: <input type="text" size=12 name="call" onclick="">
+  Additional notes or comments, if any: <input type="text" size=30 name="comment" onclick="">
+  <input type="button" value="submit" onclick="return sendlog()">
+  </form>
+  <span style="font-size:80%">
+    Note:  time, frequency, your name/call, and DXCC information are added automatically. 
+    View the <a href="~~logbook?nr=20">last 20 lines of the logbook</a>,
+    or the <a href="logbook.txt">entire logbook</a> (ctrl-click for new tab/window)  
+  </span>
+</div>
+<br style="clear:both;">
+    <hr>
+    <div style="font-size:80%">
+      <div id="stats"></div>
+      <div id="soundappletdiv"></div>
+      <div id="soundcontext"></div>
+    </div>
+
+    <hr>
+    <footer class="my-4 pt-1 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2019 Farnham WebSDR Project</p>
+    </footer>
+  </body>
+  <script src="websdr-sound.js"></script>
+</html>

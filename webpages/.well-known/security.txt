@@ -1,0 +1,4 @@
+Contact: phil@philcrump.co.uk
+Encryption: https://philcrump.co.uk/pubkey.txt
+Preferred-Languages: en
+Canonical: http://farnham-sdr.com/.well-known/security.txt
